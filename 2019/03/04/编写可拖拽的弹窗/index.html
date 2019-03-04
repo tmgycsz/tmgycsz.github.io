@@ -128,7 +128,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vue组件,">
 
 
 
@@ -141,13 +141,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈小黑的blog">
-<meta property="og:url" content="https://tmgycsz.github.io/index.html">
+<meta name="description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
+<meta name="keywords" content="vue组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编写可拖拽的弹窗">
+<meta property="og:url" content="https://tmgycsz.github.io/2019/03/04/编写可拖拽的弹窗/index.html">
 <meta property="og:site_name" content="陈小黑的blog">
+<meta property="og:description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/1bu5Wpm.png">
+<meta property="og:image" content="https://i.imgur.com/OvvFamE.png">
+<meta property="og:image" content="https://i.imgur.com/w2reN9e.png">
+<meta property="og:image" content="https://i.imgur.com/sq7O9eP.png">
+<meta property="og:updated_time" content="2019-03-04T06:42:10.812Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈小黑的blog">
+<meta name="twitter:title" content="编写可拖拽的弹窗">
+<meta name="twitter:description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
+<meta name="twitter:image" content="https://i.imgur.com/1bu5Wpm.png">
 
 
 
@@ -177,13 +187,13 @@
 
 
 
-  <link rel="canonical" href="https://tmgycsz.github.io/">
+  <link rel="canonical" href="https://tmgycsz.github.io/2019/03/04/编写可拖拽的弹窗/">
 
 
 
 
 
-  <title>陈小黑的blog</title>
+  <title>编写可拖拽的弹窗 | 陈小黑的blog</title>
   
 
 
@@ -202,8 +212,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/tmgycsz/tmgycsz.github.io" class="forkme" target="_blank">
       <img style="position: absolute; right: 0px;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
@@ -350,448 +359,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/02/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jack Chen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈小黑的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/27/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          
-             <i class="fa fa-thumb-tack"></i>
-             <font color="808080">置顶</font>
-             <span class="post-meta-divider">|</span>
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-27T14:14:46+08:00">
-                2019-02-27
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-04T15:48:00+08:00">
-                2019-03-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hello/" itemprop="url" rel="index">
-                    <span itemprop="name">hello</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/27/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/27/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/02/27/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  76 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <div class="out-img-topic">
-            <img src="/uploads/hello.jpg" class="img-topic">
-          </div>
-        
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/27/hello-world/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/04/自定义IconFont图标/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jack Chen">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="陈小黑的blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/04/自定义IconFont图标/" itemprop="url">自定义IconFont图标</a></h1>
-        
-
-        <div class="post-meta">
-          
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T14:55:07+08:00">
-                2019-03-04
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">更新于&#58;</span>
-              
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-04T15:33:09+08:00">
-                2019-03-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/常用工具/" itemprop="url" rel="index">
-                    <span itemprop="name">常用工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/03/04/自定义IconFont图标/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/自定义IconFont图标/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/03/04/自定义IconFont图标/" class="leancloud_visitors" data-flag-title="自定义IconFont图标">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,257 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  5 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在之前的项目中，很多小的icon图片都是通过利用i标签的特性给它设置固定的宽高和背景来实现的。这种方法在项目大的时候一来需要依赖的图片会很多，二来css代码如果不规范的话也会出现很多问题。所以现在我在新项目中选择了阿里巴巴的矢量图标库来实现自定义IconFont 图标。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/04/自定义IconFont图标/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -821,9 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/04/编写可拖拽的弹窗/" itemprop="url">编写可拖拽的弹窗</a></h1>
+          <h1 class="post-title" itemprop="name headline">编写可拖拽的弹窗</h1>
         
 
         <div class="post-meta">
@@ -960,20 +528,68 @@
       
 
       
-        
-        
-          <h2 id="可拖拽的弹窗"><a href="#可拖拽的弹窗" class="headerlink" title="可拖拽的弹窗"></a>可拖拽的弹窗</h2><blockquote>
+        <h2 id="可拖拽的弹窗"><a href="#可拖拽的弹窗" class="headerlink" title="可拖拽的弹窗"></a>可拖拽的弹窗</h2><blockquote>
 <p>在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。</p>
 </blockquote>
 <h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。因为写的是vue，所以利用了vue的自定义指令来操作dom。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/03/04/编写可拖拽的弹窗/" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="设计盒子ui"><a href="#设计盒子ui" class="headerlink" title="设计盒子ui"></a>设计盒子ui</h3><ol>
+<li><p>老实说，我经常被吐槽没有审美，设计的样式总是被喷。好在这次是dialog弹窗，网上有大把的参考样式。我大体参考了layer的弹窗做出了一个山寨弹窗。</p>
+<ul>
+<li><p>html代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div class=&quot;m_showBox&quot; :class=&quot;skin&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;showBox_mask&quot;&gt;&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;loading_wrap&quot; v-if=&quot;buttonstatus === 1&quot;&gt;&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;pop_box&quot; id=&quot;pox-box&quot; v-drag&gt;</span><br><span class="line">     &lt;p class=&quot;pop_box_title&quot;&gt;</span><br><span class="line">       &#123;&#123;title || &quot;提示&quot;&#125;&#125;</span><br><span class="line">       &lt;span class=&quot;pop_box_close&quot; @click=&quot;cancel&quot;&gt;&lt;/span&gt;</span><br><span class="line">     &lt;/p&gt;</span><br><span class="line">     &lt;div class=&quot;pop_box_content&quot;&gt;</span><br><span class="line">       &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;pop_box_bottom&quot;&gt;</span><br><span class="line">       &lt;a href=&quot;javascript:;&quot;</span><br><span class="line">          class=&quot;cancel_btn&quot;</span><br><span class="line">          @click=&quot;cancel&quot;&gt;&#123;&#123;canceltext || &quot;取消&quot;&#125;&#125;&lt;/a&gt;</span><br><span class="line">       &lt;a href=&quot;javascript:;&quot;</span><br><span class="line">          class=&quot;confirm_btn&quot;</span><br><span class="line">          v-if=&quot;type === &apos;confirm&apos;&quot;</span><br><span class="line">          :class=&quot;&#123;widths: buttonstatus === 1&#125;&quot;</span><br><span class="line">          @click=&quot;confirm&quot;&gt;</span><br><span class="line">         &lt;svg viewBox=&quot;25 25 50 50&quot; class=&quot;u-circular&quot; v-if=&quot;buttonstatus === 1&quot;&gt;</span><br><span class="line">           &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;20&quot; fill=&quot;none&quot; class=&quot;path&quot;&gt;&lt;/circle&gt;</span><br><span class="line">         &lt;/svg&gt;</span><br><span class="line">         &lt;span :class=&quot;&#123;&apos;marginLeft&apos;: buttonstatus === 1&#125;&quot;&gt;&#123;&#123;confirmtext || &apos;确定&apos;&#125;&#125;&lt;/span&gt;</span><br><span class="line">       &lt;/a&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>css代码太长放到github上了<a href="https://github.com/tmgycsz/blog.demo/blob/master/vue.demo/vue.drag/dragDiv.vue" target="_blank" rel="noopener">vueDrag.vue</a></p>
+</li>
+<li><p>效果图：</p>
+<p><img src="https://i.imgur.com/1bu5Wpm.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>设计要点:</p>
+<ul>
+<li>背景遮罩<br>我这里选择了使用了3个遮罩板，第一块是覆盖全屏幕的白色遮罩（m_showBox）使用fixed定位，让弹窗的所有内容与浏览器之间不会出现留白。第2块就是上图看到的灰色背景（showBox_mask），用来突显弹窗。最后一块是点击确定的遮罩窗（loading_wrap），来防止提交ajax时，用户点击按钮或修改弹窗数据。</li>
+<li>弹窗构成<br>这里的弹窗就包括标题，内容和底部部分。内容部分通过插槽插入内容，底部按钮通过svg来实现提交加载的loading效果。</li>
+</ul>
+</li>
+</ol>
+<h3 id="定义组件props"><a href="#定义组件props" class="headerlink" title="定义组件props"></a>定义组件props</h3><p>通过传入的props值来设置弹窗的样式和文案。<br><img src="https://i.imgur.com/OvvFamE.png" alt></p>
+<h3 id="自定义事件实现按钮回调"><a href="#自定义事件实现按钮回调" class="headerlink" title="自定义事件实现按钮回调"></a>自定义事件实现按钮回调</h3><p>confirm和cancel自定义事件，定义自定义按钮事件，使用$emit触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    cancel: function () &#123;</span><br><span class="line">      this.$emit(&quot;cancel&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    confirm: function () &#123;</span><br><span class="line">      if (this.buttonstatus === 1) &#123;</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line">      this.$emit(&quot;confirm&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="自定义指令drag实现拖拽效果"><a href="#自定义指令drag实现拖拽效果" class="headerlink" title="自定义指令drag实现拖拽效果"></a>自定义指令drag实现拖拽效果</h3><h4 id="vue的directives。"><a href="#vue的directives。" class="headerlink" title="vue的directives。"></a>vue的directives。</h4><p>通过vue自定义指令获取绑定的元素，在对DOM进行操作。关于更多vue自定义指令用法，移步<a href="https://cn.vuejs.org/v2/guide/custom-directive.html" target="_blank" rel="noopener">自定义指令</a></p>
+<h4 id="相关属性-事件对象event，dom元素，window对象-。"><a href="#相关属性-事件对象event，dom元素，window对象-。" class="headerlink" title="相关属性(事件对象event，dom元素，window对象)。"></a>相关属性(事件对象event，dom元素，window对象)。</h4><ol>
+<li>event.clientX：clientX事件属性返回当事件被触发时鼠标指针向对于浏览器可视区域的水平坐标。</li>
+<li>event.clientY：clientY事件属性返回当事件被触发时鼠标指针向对于浏览器页面可视区域的垂直坐标。</li>
+<li>offsetLeft/offsetLeftTop属性：可以返回当前元素距离某个定位父辈元素左边与顶部的距离（虽然我的父级遮罩层有了定位，但是它的宽高都是与body保持一致的）。</li>
+<li>offsetWidth/offsetHeight: 返回任何一个元素宽/高度，包括边框和填充</li>
+<li>window.innerHeight/Width: 获取当前页面可视区的宽高（包括滚动条）。</li>
+</ol>
+<h4 id="相关事件"><a href="#相关事件" class="headerlink" title="相关事件"></a>相关事件</h4><p><img src="https://i.imgur.com/w2reN9e.png" alt></p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">      drag: &#123;</span><br><span class="line">        inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding, vnode</span>) </span>&#123;</span><br><span class="line">          vnode = vnode.elm;</span><br><span class="line">          el.onmousedown = <span class="function">(<span class="params">(event</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (event.target.className !== <span class="string">"pop_box_title"</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取鼠标在盒子中的位置</span></span><br><span class="line">            <span class="keyword">let</span> mouseX = event.clientX - vnode.offsetLeft;</span><br><span class="line">            <span class="keyword">let</span> mouseY = event.clientY - vnode.offsetTop;</span><br><span class="line">            <span class="comment">//绑定移动和停止函数</span></span><br><span class="line">            <span class="built_in">document</span>.onmousemove = <span class="function">(<span class="params">(event</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">let</span> left, top;</span><br><span class="line">              <span class="comment">//获取新的鼠标位置对应下的盒子应该在的位置</span></span><br><span class="line">              left = event.clientX - mouseX;</span><br><span class="line">              top = event.clientY - mouseY;</span><br><span class="line">              <span class="comment">//获取div在页面中X轴的最小最大位置</span></span><br><span class="line">              <span class="keyword">let</span> minX = vnode.offsetWidth / <span class="number">2</span>;</span><br><span class="line">              <span class="keyword">let</span> maxX = (<span class="built_in">window</span>.innerWidth - vnode.offsetWidth / <span class="number">2</span>) - <span class="number">10</span><span class="comment">//去掉滚动条的宽度</span></span><br><span class="line">              <span class="keyword">if</span> (left &lt;= minX) &#123;</span><br><span class="line">                left = minX;</span><br><span class="line">              &#125; <span class="keyword">else</span> <span class="keyword">if</span> (left &gt;= maxX) &#123;</span><br><span class="line">                left = maxX;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="comment">//获取div在页面中Y轴的最大最小位置</span></span><br><span class="line">              <span class="keyword">let</span> minY = vnode.offsetHeight / <span class="number">2</span>;</span><br><span class="line">              <span class="keyword">let</span> maxY = (<span class="built_in">window</span>.innerHeight - vnode.offsetHeight / <span class="number">2</span>);</span><br><span class="line">              <span class="keyword">if</span> (top &lt;= minY) &#123;</span><br><span class="line">                top = minY;</span><br><span class="line">              &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top &gt;= maxY) &#123;</span><br><span class="line">                top = maxY;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="comment">//赋值移动</span></span><br><span class="line">              vnode.style.left = left + <span class="string">'px'</span>;</span><br><span class="line">              vnode.style.top = top + <span class="string">'px'</span>;</span><br><span class="line">           &#125;);</span><br><span class="line">           <span class="built_in">document</span>.onmouseup = <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">             <span class="built_in">document</span>.onmousemove = <span class="built_in">document</span>.onmouseup = <span class="literal">null</span>;</span><br><span class="line">           &#125;);</span><br><span class="line">         &#125;);</span><br><span class="line">         <span class="built_in">window</span>.onresize = <span class="function">(<span class="params">(</span>) =&gt;</span>&#123;</span><br><span class="line">            vnode.style.left = <span class="string">"50%"</span>;</span><br><span class="line">            vnode.style.top = <span class="string">"50%"</span>;</span><br><span class="line">         &#125;);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h4><ol>
+<li>给弹窗绑定onmousedown事件，获取到鼠标在弹窗中的位置（以弹窗左上角为原点）。</li>
+<li>document绑定onmousemove事件，获取当前的鼠标位置，当前鼠标位置减去鼠标在弹窗的相当位置即可得到此时弹窗应该处于的位置。然后在通过style设置弹窗的位置。</li>
+<li>鼠标松开解绑document的鼠标事件。</li>
+</ol>
+<blockquote>
+<p>注意点：</p>
+</blockquote>
+<ol>
+<li>弹窗要一直在页面可视区移动，最大的移动距离就是可视区的宽高减去盒子本身的宽高(还要考虑到浏览器的滚动条的宽高，我的浏览器滚动条是自己设置的，高度为0，宽度为10)。<br>window.innerHeight - vnode.offsetHeight / 2;<br>(window.innerWidth - vnode.offsetWidth / 2) - 10;</li>
+<li>只有弹窗标题才能拖拽，所以判断非标题部分之间return。</li>
+<li>浏览器窗口大小改变会影响弹窗的位置，监听改变浏览器窗口改变把弹窗居中。</li>
+</ol>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>下载drag.vue。<a href="https://github.com/tmgycsz/blog.demo/blob/master/vue.demo/vue.drag/dragDiv.vue" target="_blank" rel="noopener">vueDrag.vue</a>。</li>
+<li><p>使用import引入 </p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> vDrag <span class="keyword">from</span> <span class="string">"./dragDiv.vue"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>控制弹窗的显示隐藏通过v-if绑定data里的数据即可。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition name=<span class="string">"el-fade-in"</span>&gt;</span><br><span class="line">    &lt;v-drag v-<span class="keyword">if</span>=<span class="string">"isShow"</span> :tilte=<span class="string">"title"</span> :type=<span class="string">"type"</span> @confirm=<span class="string">"confirmSubmit"</span> @cancel=<span class="string">"cancel"</span> :buttonstatus=<span class="string">"buttonstatus"</span>&gt;</span><br><span class="line">      &lt;el-form label-width=<span class="string">"100px"</span>&gt;</span><br><span class="line">        &lt;el-form-item label=<span class="string">"用户名称："</span>&gt;</span><br><span class="line">          &lt;el-input placeholder=<span class="string">"请输入用户名"</span> v-model=<span class="string">"username"</span>&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">        &lt;el-form-item label="密码："&gt;</span><br><span class="line">          &lt;el-input placeholder="请输入密码" v-model="password"&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-form&gt;</span><br><span class="line">    &lt;/v-drag&gt;</span><br><span class="line"> &lt;/transition&gt;</span><br></pre></td></tr></table></figure>
+<p> <img src="https://i.imgur.com/sq7O9eP.png" alt></p>
+</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>关于这个组件我觉得还有很多优化的地方，望各位大佬给出意见。</p>
+
       
     </div>
     
@@ -981,24 +597,119 @@
     
     <div>
       
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size: 15px;letter-spacing: 5px;margin-top: 35px;">----------本文结束<i class="fa fa-paw"></i>感谢您的阅读-----------</div>
+    
+</div>
+
+      
     </div>
 
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢打赏，好人一生平安</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
 
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.png" alt="Jack Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.png" alt="Jack Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Jack Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tmgycsz.github.io/2019/03/04/编写可拖拽的弹窗/" title="编写可拖拽的弹窗">https://tmgycsz.github.io/2019/03/04/编写可拖拽的弹窗/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/vue组件/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>vue组件</a>
+          
+        </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/27/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/04/自定义IconFont图标/" rel="prev" title="自定义IconFont图标">
+                自定义IconFont图标 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -1008,10 +719,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1019,6 +731,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -1039,8 +758,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1139,6 +867,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可拖拽的弹窗"><span class="nav-number">1.</span> <span class="nav-text">可拖拽的弹窗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现步骤"><span class="nav-number">3.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计盒子ui"><span class="nav-number">3.1.</span> <span class="nav-text">设计盒子ui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义组件props"><span class="nav-number">3.2.</span> <span class="nav-text">定义组件props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义事件实现按钮回调"><span class="nav-number">3.3.</span> <span class="nav-text">自定义事件实现按钮回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令drag实现拖拽效果"><span class="nav-number">3.4.</span> <span class="nav-text">自定义指令drag实现拖拽效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue的directives。"><span class="nav-number">3.4.1.</span> <span class="nav-text">vue的directives。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关属性-事件对象event，dom元素，window对象-。"><span class="nav-number">3.4.2.</span> <span class="nav-text">相关属性(事件对象event，dom元素，window对象)。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关事件"><span class="nav-number">3.4.3.</span> <span class="nav-text">相关事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">3.4.4.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码解析"><span class="nav-number">3.4.5.</span> <span class="nav-text">代码解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">3.5.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1312,6 +1056,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
