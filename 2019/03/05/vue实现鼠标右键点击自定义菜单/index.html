@@ -128,7 +128,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vue组件,">
 
 
 
@@ -141,13 +141,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="陈小黑的blog">
-<meta property="og:url" content="https://tmgycsz.github.io/categories/vue组件/index.html">
+<meta name="description" content="自定义菜单最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。 最终效果图:">
+<meta name="keywords" content="vue组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="右键自定义菜单">
+<meta property="og:url" content="https://tmgycsz.github.io/2019/03/05/vue实现鼠标右键点击自定义菜单/index.html">
 <meta property="og:site_name" content="陈小黑的blog">
+<meta property="og:description" content="自定义菜单最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。 最终效果图:">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.imgur.com/pOJbK8J.png">
+<meta property="og:updated_time" content="2019-03-05T02:20:27.945Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="陈小黑的blog">
+<meta name="twitter:title" content="右键自定义菜单">
+<meta name="twitter:description" content="自定义菜单最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。 最终效果图:">
+<meta name="twitter:image" content="https://i.imgur.com/pOJbK8J.png">
 
 
 
@@ -177,13 +184,13 @@
 
 
 
-  <link rel="canonical" href="https://tmgycsz.github.io/categories/vue组件/">
+  <link rel="canonical" href="https://tmgycsz.github.io/2019/03/05/vue实现鼠标右键点击自定义菜单/">
 
 
 
 
 
-  <title>分类: vue组件 | 陈小黑的blog</title>
+  <title>右键自定义菜单 | 陈小黑的blog</title>
   
 
 
@@ -202,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <a href="https://github.com/tmgycsz/tmgycsz.github.io" class="forkme" target="_blank">
       <img style="position: absolute; right: 0px;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
@@ -350,53 +357,338 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>vue组件<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/05/vue实现鼠标右键点击自定义菜单/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈小黑的blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/04/编写可拖拽的弹窗/" itemprop="url">
-              
-                <span itemprop="name">编写可拖拽的弹窗</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">右键自定义菜单</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-04T14:09:28+08:00" content="2019-03-04">
-          03-04
-        </time>
-      </div>
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-05T09:36:59+08:00">
+                2019-03-05
+              </time>
+            
 
-    </header>
-  </article>
+            
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T10:20:27+08:00">
+                2019-03-05
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/05/vue实现鼠标右键点击自定义菜单/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/05/vue实现鼠标右键点击自定义菜单/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/05/vue实现鼠标右键点击自定义菜单/" class="leancloud_visitors" data-flag-title="右键自定义菜单">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  979 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="自定义菜单"><a href="#自定义菜单" class="headerlink" title="自定义菜单"></a>自定义菜单</h2><p>最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。</p>
+<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图:"></a>最终效果图:</h3><p><img src="https://i.imgur.com/pOJbK8J.png" alt><br><a id="more"></a></p>
+<h2 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h2><h3 id="ui部分"><a href="#ui部分" class="headerlink" title="ui部分"></a>ui部分</h3><div class="note info"><p>html代码：</p></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;tags_div&quot; v-menus&gt;</span><br><span class="line">    &lt;el-tag&gt;右键点击&lt;/el-tag&gt;</span><br><span class="line">    &lt;ul class=&quot;contextmenu&quot; :style=&quot;&#123;&apos;left&apos;: menuLeft, &apos;top&apos;: menuTop&#125;&quot; v-show=&quot;menuShow&quot;&gt;</span><br><span class="line">        &lt;li&gt;刷新&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭其它&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭所有&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="note success"><p>css代码：</p></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">.tags_div &#123;</span><br><span class="line">  margin-top: 30px;</span><br><span class="line">  position: relative;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.contextmenu &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  background: #fff;</span><br><span class="line">  width: 100px;</span><br><span class="line">  z-index: 100;</span><br><span class="line">  position: absolute;</span><br><span class="line">  list-style-type: none;</span><br><span class="line">  padding: 5px 0;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  font-size: 12px;</span><br><span class="line">  font-weight: 400;</span><br><span class="line">  color: #333;</span><br><span class="line">  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .3)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.contextmenu li &#123;</span><br><span class="line">  margin: 0;</span><br><span class="line">  padding: 7px 16px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.contextmenu li:hover &#123;</span><br><span class="line">  background: #eee;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这块没什么好说的，主要是设置子相父绝定位，鼠标点击的时候好去设置菜单栏的位置。</p>
+<h2 id="自定义指令实现右键菜单栏"><a href="#自定义指令实现右键菜单栏" class="headerlink" title="自定义指令实现右键菜单栏"></a>自定义指令实现右键菜单栏</h2><p>自定义指令我在上篇已经介绍过了，这里主要说一下设计到的相关事件和属性（上篇自定义拖拽弹窗介绍过的这里不再列出）。</p>
+<h3 id="相关属性-事件对象event，dom元素"><a href="#相关属性-事件对象event，dom元素" class="headerlink" title="相关属性(事件对象event，dom元素)"></a>相关属性(事件对象event，dom元素)</h3><ol>
+<li>event.pageX：pageX事件属性返回当事件被触发时鼠标指针向对于html的body的水平坐标。</li>
+<li>event.pageY：pageY事件属性返回当事件被触发时鼠标指针向对于html的body垂直坐标。</li>
+<li>offsetParent属性：可以返回当前元素上个定位父级元素。</li>
+</ol>
+<h3 id="相关事件"><a href="#相关事件" class="headerlink" title="相关事件"></a>相关事件</h3><ol>
+<li>oncontextmenu：事件在元素中用户点击鼠标右键时触发。</li>
+<li>onmouseup：在用户松开鼠标按键时触发。</li>
+</ol>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="note default"><p>vue代码：</p></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">    menus: &#123;</span><br><span class="line">      inserted: function (el, binding, vnode) &#123;</span><br><span class="line">        //获取vue实例对象</span><br><span class="line">        let vm = vnode.context;</span><br><span class="line">        let showFlag = true;</span><br><span class="line">        vnode = vnode.elm;</span><br><span class="line">        //阻止默认浏览器的右键菜单</span><br><span class="line">        el.oncontextmenu = ((event) =&gt; &#123;</span><br><span class="line">          event.preventDefault();</span><br><span class="line">        &#125;);</span><br><span class="line">        el.onmouseup = ((event) =&gt; &#123;</span><br><span class="line">          if (event.button === 2) &#123;</span><br><span class="line">              vm.menuShow = true;</span><br><span class="line">              showFlag = false;</span><br><span class="line">              let realTop = vm.getElementToPageTop(vnode);</span><br><span class="line">              let realLeft = vm.getElementToPageLeft(vnode);</span><br><span class="line">              let top = event.pageY - realTop + 5 + &apos;px&apos;;</span><br><span class="line">              let left = event.pageX - realLeft + 5 + &apos;px&apos;;</span><br><span class="line">              vm.menuLeft = left;</span><br><span class="line">              vm.menuTop = top;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        document.onmouseup = (() =&gt; &#123;</span><br><span class="line">          if (showFlag) &#123;</span><br><span class="line">            vm.menuShow = false;</span><br><span class="line">          &#125;</span><br><span class="line">          showFlag = true;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">//vue实例数据</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        menuShow: false,</span><br><span class="line">        menuLeft: 0,</span><br><span class="line">        menuTop: 0,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//获取当前元素距离body原点的距离</span><br><span class="line">methods: &#123;</span><br><span class="line">    getElementToPageTop: function (el) &#123;</span><br><span class="line">       if (el.offsetParent) &#123;</span><br><span class="line">         return this.getElementToPageTop(el.offsetParent) + el.offsetTop;</span><br><span class="line">        &#125;</span><br><span class="line">       return el.offsetTop;</span><br><span class="line">    &#125;,</span><br><span class="line">    getElementToPageLeft: function (el) &#123;</span><br><span class="line">       if (el.offsetParent) &#123;</span><br><span class="line">         return this.getElementToPageLeft(el.offsetParent) + el.offsetLeft;</span><br><span class="line">       &#125;</span><br><span class="line">       return el.offsetLeft;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
+<li>首先是通过oncontextmenu阻止浏览器的上下文菜单，在绑定onmouseup事件判断鼠标右键点击。</li>
+<li>获取当前元素距离body顶端的距离,在与鼠标在页面中的实际距离想减获取鼠标在div中的位置，进而设置菜单栏出现的位置。</li>
+<li>给document绑定onmouseup事件，点击页面其他地方关闭菜单栏。</li>
+</ol>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
+<li>获取当前元素距离body顶端的距离要判断当前元素有没有上级定位元素，如果有当前元素距离body顶端的距离是它的距离body顶端的距离与定位父级距离body顶端的距离之和。这里我写了两个递归来实现距离的计算getElementToPageTop，getElementToPageLeft。</li>
+<li>点击其它的地方关闭菜单栏，这里在自定义指定的元素上点击右键时设置了一个标识，只有当这个标识为false的时候才不会关闭菜单栏。</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size: 15px;letter-spacing: 5px;margin-top: 35px;">----------本文结束<i class="fa fa-paw"></i>感谢您的阅读-----------</div>
+    
+</div>
 
       
     </div>
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢打赏，好人一生平安</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.png" alt="Jack Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.png" alt="Jack Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Jack Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tmgycsz.github.io/2019/03/05/vue实现鼠标右键点击自定义菜单/" title="右键自定义菜单">https://tmgycsz.github.io/2019/03/05/vue实现鼠标右键点击自定义菜单/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue组件/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>vue组件</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/04/自定义IconFont图标/" rel="next" title="自定义IconFont图标">
+                <i class="fa fa-chevron-left"></i> 自定义IconFont图标
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/05/next主题优化/" rel="prev" title="next主题优化">
+                next主题优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -404,6 +696,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -424,8 +723,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -524,6 +832,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义菜单"><span class="nav-number">1.</span> <span class="nav-text">自定义菜单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最终效果图"><span class="nav-number">1.1.</span> <span class="nav-text">最终效果图:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构代码"><span class="nav-number">2.</span> <span class="nav-text">结构代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ui部分"><span class="nav-number">2.1.</span> <span class="nav-text">ui部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义指令实现右键菜单栏"><span class="nav-number">3.</span> <span class="nav-text">自定义指令实现右键菜单栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关属性-事件对象event，dom元素"><span class="nav-number">3.1.</span> <span class="nav-text">相关属性(事件对象event，dom元素)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关事件"><span class="nav-number">3.2.</span> <span class="nav-text">相关事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现代码"><span class="nav-number">3.3.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">3.4.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">3.5.</span> <span class="nav-text">注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -697,6 +1021,10 @@ setInterval("createtime()",250);
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
