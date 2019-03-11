@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "7cf2c65b"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Javascript原生对象,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="陈小黑的blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="前言上一篇做了一下数组的总结，在总结的过程中重新巩固了对数组的方法的使用，很多以前没记住的细节也一一捡了起来，这一篇Sring笔记也是为了重新复习下String的相关定义和用法。 原生对象String1 JavaScript的原生对象String关于String作为原生对象和构造函数的区别，上一篇数组有过详细的解析。这里就直接开始分析这两种情况下的String的使用。">
+<meta name="keywords" content="Javascript原生对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String笔记">
+<meta property="og:url" content="https://tmgycsz.github.io/2019/03/11/String笔记/index.html">
+<meta property="og:site_name" content="陈小黑的blog">
+<meta property="og:description" content="前言上一篇做了一下数组的总结，在总结的过程中重新巩固了对数组的方法的使用，很多以前没记住的细节也一一捡了起来，这一篇Sring笔记也是为了重新复习下String的相关定义和用法。 原生对象String1 JavaScript的原生对象String关于String作为原生对象和构造函数的区别，上一篇数组有过详细的解析。这里就直接开始分析这两种情况下的String的使用。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-11T07:59:44.156Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="String笔记">
+<meta name="twitter:description" content="前言上一篇做了一下数组的总结，在总结的过程中重新巩固了对数组的方法的使用，很多以前没记住的细节也一一捡了起来，这一篇Sring笔记也是为了重新复习下String的相关定义和用法。 原生对象String1 JavaScript的原生对象String关于String作为原生对象和构造函数的区别，上一篇数组有过详细的解析。这里就直接开始分析这两种情况下的String的使用。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tmgycsz.github.io/2019/03/11/String笔记/">
+
+
+
+
+
+  <title>String笔记 | 陈小黑的blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/tmgycsz/tmgycsz.github.io" class="forkme" target="_blank">
+      <img style="position: absolute; right: 0px;" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+    </a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈小黑的blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-music">
+          <a href="/music/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-music"></i> <br>
+            
+            音乐
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/11/String笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈小黑的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">String笔记</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T14:25:14+08:00">
+                2019-03-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-03-11T15:59:44+08:00">
+                2019-03-11
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Javascript原生对象/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript原生对象</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/11/String笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/11/String笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/11/String笔记/" class="leancloud_visitors" data-flag-title="String笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3,822 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上一篇做了一下数组的总结，在总结的过程中重新巩固了对数组的方法的使用，很多以前没记住的细节也一一捡了起来，这一篇Sring笔记也是为了重新复习下String的相关定义和用法。</p>
+<h2 id="原生对象String"><a href="#原生对象String" class="headerlink" title="原生对象String"></a>原生对象String</h2><p>1 <code>JavaScript</code>的原生对象<code>String</code><br>关于<code>String</code>作为原生对象和构造函数的区别，上一篇数组有过详细的解析。这里就直接开始分析这两种情况下的<code>String</code>的使用。<br><a id="more"></a></p>
+<h3 id="属性和方法使用"><a href="#属性和方法使用" class="headerlink" title="属性和方法使用"></a>属性和方法使用</h3><h4 id="length属性"><a href="#length属性" class="headerlink" title="length属性"></a>length属性</h4><p>这里的<code>length</code>属性只是<code>String对象</code>本身的<code>length</code>属性，其值为<code>1</code>。</p>
+<h4 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h4><p><code>name</code>属性返回<code>String</code>对象名称。与<code>length</code>属性一样，其值为<code>String</code>。</p>
+<h4 id="fromCharCode-方法"><a href="#fromCharCode-方法" class="headerlink" title="fromCharCode()方法"></a>fromCharCode()方法</h4><ol>
+<li>一个参数：<ul>
+<li>要转换的数据</li>
+</ul>
+</li>
+<li>用法：返回使用指定的<code>Unicode</code>值序列创建的字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String.fromCharCode(98,99,100);</span><br><span class="line">// &quot;bcd&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<div class="note danger"><p>注意：作用于高位编码，返回简单的高位编码的字符串，例如阿拉伯数字等等。</p></div>
+<h3 id="fromCodePoint-方法。"><a href="#fromCodePoint-方法。" class="headerlink" title="fromCodePoint()方法。"></a>fromCodePoint()方法。</h3><ol>
+<li>一个参数：<ul>
+<li>要转换的数据</li>
+</ul>
+</li>
+<li>用法：返回使用指定的代码点序列创建的字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String.fromCodePoint(0x2F804);</span><br><span class="line">// &quot;你&quot;</span><br><span class="line">String.fromCharCode(0x2F804);</span><br><span class="line">// &quot;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<div class="note danger"><p>注意：<code>String.fromCodePoint()</code>是<code>ES6</code>的新方法，被用来返回一对低位编码，从而可以完全表示这些高位编码字符。</p></div>
+<h2 id="函数String"><a href="#函数String" class="headerlink" title="函数String"></a>函数String</h2><h3 id="创建规范"><a href="#创建规范" class="headerlink" title="创建规范"></a>创建规范</h3><p>字符串可以通过3个方式创建，字面量方式，<code>String</code>方法转化，以及<code>String</code>构造函数创建。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;12&quot;;</span><br><span class="line">let str2 = String(&quot;13&quot;);</span><br><span class="line">console.log(typeof(str));</span><br><span class="line">console.log(typeof(str2));</span><br><span class="line">str.__proto__ === String.prototype;</span><br><span class="line">str2.__proto__ === String.prototype;</span><br><span class="line">// string</span><br><span class="line">// string</span><br><span class="line">// true</span><br><span class="line">// true</span><br><span class="line"></span><br><span class="line">let str1 = new String(&quot;12&quot;);</span><br><span class="line">console.log(typeof(str1));</span><br><span class="line">str1.__proto__ === String.prototype;</span><br><span class="line">// object</span><br><span class="line">// true</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>字面量方式创建的字符串和<code>String方法</code>转化的字符串都是基本字符串。这些基本字符串没有属性和方法。而通过<code>String构造函数</code>创建的实例对象都是字符串对象，它继承<code>String原型</code>的上的属性和方法。</li>
+<li>当基本字符串需要调用一个字符串对象才有的方法或者查询值的时候(基本字符串是没有这些方法的)，<code>JavaScript</code>会自动将基本字符串转化为字符串对象并且调用相应的方法或者执行查询。</li>
+</ol>
+<h3 id="实例方法（es5）"><a href="#实例方法（es5）" class="headerlink" title="实例方法（es5）"></a>实例方法（es5）</h3><p>通过构造函数<code>new String</code>创建的实例对象，它们的<code>__proto__</code>属性都是指向了<code>String构造函数</code>的原型对象，就继承了原型对象上的属性和方法。<br><div class="note success"><p><code>String.prototype.</code></p></div></p>
+<h4 id="charAt-方法"><a href="#charAt-方法" class="headerlink" title="charAt()方法"></a>charAt()方法</h4><ol>
+<li>一个参数：<ul>
+<li><code>index</code> 字符串的索引，取值为整数。(<code>0</code>~<code>length-1</code>)。<ol>
+<li>传入非数字或者不传则默认取索引为<code>0</code>的字符。</li>
+<li>传入的数值大于取值范围(<code>0</code>~<code>length-1</code>)，返回空字符串。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法从一个字符串中返回指定索引的字符。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;123&quot;;</span><br><span class="line">console.log(str.charAt(0));</span><br><span class="line">console.log(str.charAt(1));</span><br><span class="line">console.log(str.charAt(2));</span><br><span class="line">console.log(str.charAt());</span><br><span class="line">console.log(str.charAt(&quot;0&quot;));</span><br><span class="line">console.log(str.charAt(5));</span><br><span class="line">// 打印结果</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">&quot;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="concat-方法"><a href="#concat-方法" class="headerlink" title="concat()方法"></a>concat()方法</h4><ol>
+<li>多个参数：<ul>
+<li><code>string1</code>， <code>string2...</code> 和原字符串连接的多个字符串。</li>
+</ul>
+</li>
+<li>用法：方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let str1 = &quot;hello&quot;;</span><br><span class="line">let str2 = &quot;world&quot;;</span><br><span class="line">let str3 = str1 + str2;</span><br><span class="line">let str4 = str1.concat(str2);</span><br><span class="line">console.log(str1);</span><br><span class="line">console.log(str3);</span><br><span class="line">console.log(str4);</span><br><span class="line">let str5 = `$&#123;str1&#125;：$&#123;str2&#125;`</span><br><span class="line">console.log(str5);</span><br><span class="line"></span><br><span class="line">// 打印结果</span><br><span class="line">&quot;hello&quot;</span><br><span class="line">&quot;helloworld&quot;</span><br><span class="line">&quot;helloworld&quot;</span><br><span class="line">&quot;hello：world&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<div class="note danger"><p>注意：</p>
+<ol>
+<li>性能上字符串拼接性能高于使用concat方法。</li>
+<li>ES6的模板字符串拼接方便与其他未声明的字符串拼接。</li>
+</ol></div>
+<h4 id="indexOf-方法"><a href="#indexOf-方法" class="headerlink" title="indexOf()方法"></a>indexOf()方法</h4><ol>
+<li>两个个参数：<ul>
+<li><code>string</code><br>  指定查询的字符串。</li>
+<li><code>index</code><ol>
+<li>表示调用该方法的字符串中开始查找的位置，取值为整数，默认值为<code>0</code>。</li>
+<li>查找的值是非空字符串。<ul>
+<li><code>index</code> &lt; <code>0</code> 与传入默认值<code>0</code>返回结果一致。</li>
+<li>如果<code>index</code> &gt;= <code>str.length</code>，则该方法返回<code>-1</code>。</li>
+</ul>
+</li>
+<li>查找的值是空字符串。<ul>
+<li><code>index</code> &lt;= <code>0</code> 时返回<code>0</code>。</li>
+<li><code>0</code> &lt; <code>index</code> &lt;= <code>str.length</code>时返回<code>index</code>的值。</li>
+<li><code>index</code> &gt; <code>str.length</code>时返回<code>str.length</code>。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法返回调用String对象中第一次出现的指定值的索引，如果未找到该值，则返回-1。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;this is a question&quot;;</span><br><span class="line">let findStr = &quot;question&quot;;</span><br><span class="line">let emptyStr = &quot;&quot;;</span><br><span class="line">console.log(str.indexOf(findStr));</span><br><span class="line">console.log(str.indexOf(findStr, -1));</span><br><span class="line">console.log(str.indexOf(findStr, 20));</span><br><span class="line">console.log(str.indexOf(&quot;answer&quot;));</span><br><span class="line"></span><br><span class="line">console.log(str.indexOf(emptyStr, -1));</span><br><span class="line">console.log(str.indexOf(emptyStr, 15));</span><br><span class="line">console.log(str.indexOf(emptyStr, 20));</span><br><span class="line">// 打印结果</span><br><span class="line">10</span><br><span class="line">10</span><br><span class="line">-1</span><br><span class="line">-1</span><br><span class="line">0</span><br><span class="line">15</span><br><span class="line">18</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="lastIndexOf-方法"><a href="#lastIndexOf-方法" class="headerlink" title="lastIndexOf()方法"></a>lastIndexOf()方法</h4><ol>
+<li>两个个参数：<ul>
+<li><code>string</code><br>  指定查询的字符串。</li>
+<li><code>index</code><ol>
+<li>表示调用该方法的字符串中开始查找的位置，取值为整数，默认值为<code>str.length</code>。</li>
+<li>查找的值是非空字符串<ul>
+<li><code>index</code> &lt; <code>0</code> 则<code>index</code> = <code>0</code>。</li>
+<li>如果 <code>index</code> &gt; <code>str.length</code>，则<code>index</code> = <code>str.length</code>。</li>
+</ul>
+</li>
+<li>查找的值是空字符串<ul>
+<li><code>index</code> &lt;= <code>0</code> 时返回<code>0</code>。</li>
+<li><code>0</code> &lt; <code>index</code> &lt;= <code>str.length</code>时返回<code>index</code>的值。</li>
+<li><code>index</code> &gt; <code>str.length</code>时返回<code>str.length</code>。</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法返回指定值在调用该方法的字符串中最后出现的位置，如果没找到则返回<code>-1</code>。从该字符串的后面向前查找，从<code>index</code>处开始。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;this is a question&quot;;</span><br><span class="line">let findStr = &quot;question&quot;;</span><br><span class="line">let emptyStr = &quot;&quot;;</span><br><span class="line">console.log(str.lastIndexOf(findStr));</span><br><span class="line">console.log(str.lastIndexOf(findStr, 20));</span><br><span class="line">console.log(str.lastIndexOf(findStr, -1));</span><br><span class="line">console.log(str.lastIndexOf(&quot;answer&quot;));</span><br><span class="line"></span><br><span class="line">console.log(str.lastIndexOf(emptyStr, -1));</span><br><span class="line">console.log(str.lastIndexOf(emptyStr, 15));</span><br><span class="line">console.log(str.lastIndexOf(emptyStr, 20));</span><br><span class="line">// 打印结果</span><br><span class="line">10</span><br><span class="line">10</span><br><span class="line">-1</span><br><span class="line">-1</span><br><span class="line">0</span><br><span class="line">15</span><br><span class="line">18</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="slice-方法"><a href="#slice-方法" class="headerlink" title="slice()方法"></a>slice()方法</h4><ol>
+<li>两个个参数：<ul>
+<li><code>beginIndex</code><ol>
+<li>开始提取字符串的索引位置，取值为整数。</li>
+<li>如果为负数，则<code>beginIndex</code> = <code>str.length</code> + <code>beginIndex</code>;</li>
+<li>如果省略该参数，<code>beginIndex = 0</code>。</li>
+</ol>
+</li>
+<li>endIndex<ol>
+<li>结束提取字符串的索引位置，取值为整数。</li>
+<li>如果<code>endIndex</code> &lt; <code>0</code>，则<code>endIndex</code>= <code>str.length</code> + <code>endIndex</code>;</li>
+<li>如果<code>endIndex</code> &gt; <code>str.length</code> - <code>1</code>，<code>slice</code>会一直提取到字符串末尾。</li>
+<li>如果省略该参数，<code>slice</code>会一直提取到字符串末尾</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法提取一个字符串的一部分，并返回一新的字符串。提取的新字符串包括<code>beginIndex</code>但不包括<code>endIndex</code>。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;xiaohei like play basketball&quot;;</span><br><span class="line">console.log(str.slice());</span><br><span class="line">console.log(str.slice(0, 50));</span><br><span class="line">console.log(str.slice(-3));</span><br><span class="line">console.log(str.slice(0, -9));</span><br><span class="line">// 打印结果</span><br><span class="line">&quot;xiaohei like play basketball&quot;</span><br><span class="line">&quot;xiaohei like play basketball&quot;</span><br><span class="line">&quot;all&quot;</span><br><span class="line">&quot;xiaohei like play b&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="split-方法"><a href="#split-方法" class="headerlink" title="split()方法"></a>split()方法</h4><ol>
+<li>两个参数：<ul>
+<li><code>separator</code><ol>
+<li>指定表示每个拆分应发生的点的字符串。</li>
+<li>如果省略，会返回有含有整个字符串元素的数组;</li>
+<li>如果分隔符为空字符串，则将原字符串中每个字符的数组形式返回。</li>
+</ol>
+</li>
+<li><code>limitNumber</code><ol>
+<li>指定分割后返回数组的元素个数，取值为整数。</li>
+<li>如果<code>limitNumber</code>&lt; <code>0</code>，则返回全部被分割的元素组成的数组;</li>
+<li>如果<code>limitNumber</code>大于当前被分割的元素个数，则返回全部被分割的元素组成的数组。</li>
+<li>如果<code>limitNumber</code>小于当前被分割的元素个数，则返回<code>limitNumber</code>个数的元素组成的数组。</li>
+<li>如果省略该参数，则返回全部被分割的元素组成的数组。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法使用指定的分隔符字符串将一个<code>String</code>对象分割成字符串数组，以将字符串分隔为子字符串，以确定每个拆分的位置。不改变原有字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;asd,12,2,321,21&quot;</span><br><span class="line">console.log(str.split(&quot;,&quot;, 0));</span><br><span class="line">console.log(str.split(&quot;,&quot;, -1));</span><br><span class="line">console.log(str.split(&quot;,&quot;));</span><br><span class="line">console.log(str.split(&quot;,&quot;, 3));</span><br><span class="line">console.log(str.split(&quot;,&quot;, 6));</span><br><span class="line"></span><br><span class="line">let str1 = &quot;today is sunday&quot;;</span><br><span class="line">console.log(str1.split());</span><br><span class="line">console.log(str1.split(&quot;&quot;));</span><br><span class="line"></span><br><span class="line">//打印结果</span><br><span class="line">[]</span><br><span class="line">[&quot;asd&quot;, &quot;12&quot;, &quot;2&quot;, &quot;321&quot;, &quot;21&quot;]</span><br><span class="line">[&quot;asd&quot;, &quot;12&quot;, &quot;2&quot;, &quot;321&quot;, &quot;21&quot;]</span><br><span class="line">[&quot;asd&quot;, &quot;12&quot;, &quot;2&quot;]</span><br><span class="line">[&quot;asd&quot;, &quot;12&quot;, &quot;2&quot;, &quot;321&quot;, &quot;21&quot;]</span><br><span class="line"></span><br><span class="line">[&quot;today is sunday&quot;]</span><br><span class="line">[&quot;t&quot;, &quot;o&quot;, &quot;d&quot;, &quot;a&quot;, &quot;y&quot;, &quot; &quot;, &quot;i&quot;, &quot;s&quot;, &quot; &quot;, &quot;s&quot;, &quot;u&quot;, &quot;n&quot;, &quot;d&quot;, &quot;a&quot;, &quot;y&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="substring-方法"><a href="#substring-方法" class="headerlink" title="substring()方法"></a>substring()方法</h4><ol>
+<li>两个参数：<ul>
+<li><code>startIndex</code><ol>
+<li>截取字符串开始的索引，为一个整数。</li>
+<li><code>startIndex</code> = <code>endIndex</code>，返回一个空字符串。</li>
+<li><code>startIndex</code> &gt; <code>endIndex</code>则<code>startIndex</code> = <code>endIndex</code>而<code>endIndex</code> = <code>startIndex</code>。</li>
+<li><code>startIndex</code> &lt; <code>0</code>或者<code>startIndex</code> = <code>NaN</code>, 则<code>startIndex</code> = <code>0</code>。</li>
+<li><code>startIndex</code> &gt; <code>str.length</code> - <code>1</code> 则<code>startIndex</code> = <code>str.length - 1</code>。   </li>
+</ol>
+</li>
+<li><code>endIndex</code><ol>
+<li>截取字符串结束的索引，为一个整数。</li>
+<li><code>endIndex</code> &lt; <code>0</code>或者<code>endIndex</code>=<code>NaN</code>, 则<code>endIndex</code>=<code>0</code>。</li>
+<li><code>endIndex</code> &gt;<code>str.length - 1</code>则<code>endIndex= str.length - 1</code>。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法返回一个字符串在开始索引到结束索引之间字符串。不改变原有字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;qwertydf&quot;;</span><br><span class="line">console.log(str.substring());</span><br><span class="line">console.log(str.substring(1, 1));</span><br><span class="line">console.log(str.substring(-1, 3));</span><br><span class="line">console.log(str.substring(-1, 20));</span><br><span class="line">console.log(str.substring(6, 0));</span><br><span class="line"></span><br><span class="line">// 打印结果</span><br><span class="line">&quot;qwertydf&quot;</span><br><span class="line">&quot;&quot;</span><br><span class="line">&quot;qwe&quot;</span><br><span class="line">&quot;qwertydf&quot;</span><br><span class="line">&quot;qwerty&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="toUpperCase-方法，toLocaleUpperCase-方法"><a href="#toUpperCase-方法，toLocaleUpperCase-方法" class="headerlink" title="toUpperCase()方法，toLocaleUpperCase()方法"></a>toUpperCase()方法，toLocaleUpperCase()方法</h4><div class="note info"><p><code>toUpperCase()</code>方法将调用该方法字符串值转换为大写形式，并返回。</p></div>
+<div class="note info"><p><code>toLocaleUpperCase()</code>方法使用本地化<code>locale-specific</code>的大小写映射规则将输入的字符串转化成大写形式并返回结果字符串。</p></div>
+<ol>
+<li>参数：无。</li>
+<li>用法：两个方法绝大多数情况下返回结果一致，对于一些特殊的语言会返回不同，（日常使用中没啥区别）。都不会改变原来字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;helloworld, HI&quot;;</span><br><span class="line">str.toLocaleUpperCase(); // HELLOWORLD, HI</span><br><span class="line">str.toUpperCase(); // HELLOWORLD, HI</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="toLowerCase-方法，toLocaleLowerCase-方法"><a href="#toLowerCase-方法，toLocaleLowerCase-方法" class="headerlink" title="toLowerCase()方法，toLocaleLowerCase()方法"></a>toLowerCase()方法，toLocaleLowerCase()方法</h4><div class="note info"><p><code>toLowerCase()</code>方法将调用该方法的字符串值转换为小写形式，并返回。</p></div>
+<div class="note info"><p><code>toLocaleLowerCase()</code>方法使用本地化<code>locale-specific</code>的大小写映射规则将输入的字符串转化成小写形式并返回结果字符串。</p></div>
+<ol>
+<li>参数：无。</li>
+<li>用法：两个方法绝大多数情况下返回结果一致，对于一些特殊的语言会返回不同，（日常使用中没啥区别）。都不会改变原来字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;helloworld, HI&quot;;</span><br><span class="line">str.toLocaleLowerCase(); // helloworld, hi</span><br><span class="line">str.toLowerCase(); // helloworld, hi</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="valueOf-方法，toString-方法"><a href="#valueOf-方法，toString-方法" class="headerlink" title="valueOf()方法，toString()方法"></a>valueOf()方法，toString()方法</h4><div class="note info"><p><code>valueOf()</code>：字符串或者字符串对象调用该方法返回的该字符串的基本字符串格式。</p></div>
+<div class="note info"><p><code>toString()</code>：字符串或者字符串对象调用该方法返回的该字符串的基本字符串格式。</p></div>
+<ol>
+<li>参数：无。</li>
+<li>用法：上文中提到了字符串的两个基本格式，基本字符串和字符串对象，而基本字符串在使用实例方法时，<code>JavaScript</code>会把它转化成字符串对象后再调用方法。所以无论是基本字符串还是字符串对象调用这两个方法，本质上是没有区别的。<code>valueOf()</code>方法通常在<code>JavaScript</code>内部被调用，而不是在代码里显示调用。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let baseStr = &quot;baseString&quot;;</span><br><span class="line">let objStr = new String(&quot;objectString&quot;);</span><br><span class="line">console.log(baseStr.toString());</span><br><span class="line">console.log(objStr);</span><br><span class="line">console.log(objStr.valueOf());</span><br><span class="line"></span><br><span class="line">// 打印结果</span><br><span class="line">&quot;baseString&quot;</span><br><span class="line">String &#123;0: &quot;o&quot;, 1: &quot;b&quot;, 2: &quot;j&quot;, 3: &quot;e&quot;, 4: &quot;c&quot;, 5: &quot;t&quot;, 6: &quot;S&quot;, 7: &quot;t&quot;, 8: &quot;r&quot;, 9: &quot;i&quot;, 10: &quot;n&quot;, 11: &quot;g&quot;&#125;</span><br><span class="line">&quot;objectString&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="trim-方法"><a href="#trim-方法" class="headerlink" title="trim()方法"></a>trim()方法</h4><ol>
+<li>参数：无。</li>
+<li>用法：方法会从一个字符串的两端删除空白字符。方法并不影响原字符串本身。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;test&quot;;</span><br><span class="line">console.log(str.trim()); // test</span><br><span class="line">console.log(str); // test</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="实例方法（ES6）"><a href="#实例方法（ES6）" class="headerlink" title="实例方法（ES6）"></a>实例方法（ES6）</h3><p>通过构造函数<code>new String</code>创建的实例对象，它们的<code>__proto__</code>属性都是指向了<code>String构造函数</code>的原型对象，就继承了原型对象上的属性和方法。<br><div class="note success"><p><code>String.prototype.</code></p></div></p>
+<h4 id="includes-方法"><a href="#includes-方法" class="headerlink" title="includes()方法"></a>includes()方法</h4><ol>
+<li>参数：两个参数。<ul>
+<li><code>string</code><br>  指定查询的字符串。</li>
+<li><code>index</code><ol>
+<li>开始查询的位置，取值为整数。</li>
+<li>取值不正确或不填默认从<code>0</code>开始。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回<code>true</code>或<code>false</code>。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;hello world&quot;;</span><br><span class="line">let str1 = &quot;world&quot;;</span><br><span class="line">console.log(str.includes(str, 0));</span><br><span class="line">console.log(str.includes(str1, 6));</span><br><span class="line">console.log(str.includes(str1, 20));</span><br><span class="line">console.log(str.includes(str1, &quot;ads&quot;));</span><br><span class="line">// 打印结果</span><br><span class="line">true</span><br><span class="line">true</span><br><span class="line">false</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="startWith-方法"><a href="#startWith-方法" class="headerlink" title="startWith()方法"></a>startWith()方法</h4><ol>
+<li>参数：两个参数。<ul>
+<li><code>string</code><br>  指定查询的字符串。</li>
+<li><code>index</code><ol>
+<li>开始查询的位置，取值为整数。</li>
+<li>取值不正确或不填默认从<code>0</code>开始。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法用来判断当前字符串是否是以另外一个给定的子字符串<code>开头</code>的，根据判断结果返回<code>true</code>或<code>false</code>。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;object is not found&quot;;</span><br><span class="line">console.log(str.startsWith(&quot;object&quot;, 1));</span><br><span class="line">console.log(str.startsWith(&quot;object&quot;));</span><br><span class="line">console.log(str.startsWith(&quot;object&quot;, &quot;sadas&quot;));</span><br><span class="line">// 打印结果</span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="endWith-方法"><a href="#endWith-方法" class="headerlink" title="endWith()方法"></a>endWith()方法</h4><ol>
+<li>参数：两个参数。</li>
+</ol>
+<ul>
+<li><code>string</code><br>  指定查询的字符串。</li>
+<li><code>index</code><ol>
+<li>开始查询的位置，取值为整数。</li>
+<li>取值不正确或者不填默认字符串末尾是否已要查找的字符串结尾。</li>
+<li>如果传值正确，则表示从<code>str.length</code>-<code>index</code>处往前的字符串是否以要查找的字符串结尾。</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>用法：方法用来判断当前字符串是否是以另外一个给定的子字符串“结尾”的，根据判断结果返回<code>true</code>或<code>false</code>。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;object,String&quot;;</span><br><span class="line">console.log(str.endsWith(&quot;object&quot;)); // false</span><br><span class="line">console.log(str.endsWith(&quot;String&quot;)); // true</span><br><span class="line"></span><br><span class="line">// 从str.length - index往前的字符串</span><br><span class="line">// 从7索引位置开始前面的字符串是否包含object</span><br><span class="line">console.log(str.endsWith(&quot;object&quot;, 6)); // true</span><br><span class="line"></span><br><span class="line">// 从6索引位置开始前面的字符串是否包含object</span><br><span class="line">console.log(str.endsWith(&quot;object&quot;, 7)); // false</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="padStart-方法，-padEnd-方法"><a href="#padStart-方法，-padEnd-方法" class="headerlink" title="padStart()方法， padEnd()方法"></a>padStart()方法， padEnd()方法</h4><ol>
+<li>参数：两个参数。<ul>
+<li><code>length</code><ol>
+<li>补全字符串的长度，取值为整数。</li>
+<li>如果原字符串长度大于补全长度，则返回原字符串。</li>
+</ol>
+</li>
+<li><code>string</code><ol>
+<li>用来补全的字符串。</li>
+<li>如果不填则以空字符串补全。</li>
+<li>如果补全的字符串长度与原字符串长度相加大于了补全长度参数，则会截取大于补全长度的多余的补全字符串。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法用来在字符串头部/尾部补全不够指定长度的字符串，返回新的字符串，不改变原来字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;1&quot;;</span><br><span class="line">console.log(str.padStart(3));</span><br><span class="line">console.log(str.padEnd(3));</span><br><span class="line">console.log(str.padStart(3, &quot;2&quot;));</span><br><span class="line">console.log(str.padEnd(3, &quot;2&quot;));</span><br><span class="line"></span><br><span class="line">let str1 = &quot;abcdefg&quot;;</span><br><span class="line">console.log(str1.padStart(10, &quot;hijklm&quot;));</span><br><span class="line">console.log(str1.padEnd(10, &quot;hijklm&quot;));</span><br><span class="line"></span><br><span class="line">let str2 = &quot;09-12&quot;</span><br><span class="line">console.log(str2.padStart(10, &quot;YYYY-MM-DD&quot;));</span><br><span class="line"></span><br><span class="line">let str3 = &quot;abc&quot;;</span><br><span class="line">console.log(str3.padStart(2));</span><br><span class="line">console.log(str3.padEnd(2, &quot;2222&quot;));</span><br><span class="line"></span><br><span class="line">// 打印结果</span><br><span class="line">&quot;  1&quot;</span><br><span class="line">&quot;1  &quot;</span><br><span class="line">&quot;221&quot;</span><br><span class="line">&quot;122&quot;</span><br><span class="line"></span><br><span class="line">&quot;hijabcdefg&quot;</span><br><span class="line">&quot;abcdefghij&quot;</span><br><span class="line">&quot;YYYY-09-12&quot;</span><br><span class="line"></span><br><span class="line">&quot;abc&quot;</span><br><span class="line">&quot;abc&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="repeat-方法"><a href="#repeat-方法" class="headerlink" title="repeat()方法"></a>repeat()方法</h4><ol>
+<li>参数：一个参数。<ul>
+<li><code>number</code><ol>
+<li>指定重复的次数，取值为整数。</li>
+<li>取值为<code>0</code>表示重复<code>0</code>次，返回空字符串。</li>
+<li>取值为<code>NaN</code>或者<code>(-1,0]</code>则<code>number</code> = <code>0</code>。</li>
+<li>字符串转化成数字。</li>
+<li>小于等于<code>-1</code>的数或者无限数都会报错。</li>
+<li>小数直接取整。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>用法：方法用来把原字符串重复n次，返回新字符串。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">let str = &quot;a&quot;;</span><br><span class="line">console.log(str.repeat(0));</span><br><span class="line">console.log(str.repeat(2));</span><br><span class="line">console.log(str.repeat(2.9));</span><br><span class="line"></span><br><span class="line">console.log(str.repeat(&quot;asd&quot;));</span><br><span class="line">console.log(str.repeat(-0.9));</span><br><span class="line"></span><br><span class="line">console.log(str.repeat(&quot;2&quot;));</span><br><span class="line"></span><br><span class="line">console.log(str.repeat(-1));</span><br><span class="line">console.log(str.repeat(Infinity));</span><br><span class="line">// 打印结果</span><br><span class="line">&quot;&quot;</span><br><span class="line">&quot;aa&quot;</span><br><span class="line">&quot;aa&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;</span><br><span class="line">&quot;&quot;</span><br><span class="line"></span><br><span class="line">&quot;aaa&quot;</span><br><span class="line"></span><br><span class="line">&quot;Uncaught RangeError: Invalid count value&quot;</span><br><span class="line">&quot;Uncaught RangeError: Invalid count value&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>由于正则这块忘得差不多了，所以String与正则相关的方法会在后续完成正则的复习后再加上…</em></p>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size: 15px;letter-spacing: 5px;margin-top: 35px;">----------本文结束<i class="fa fa-paw"></i>感谢您的阅读-----------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢打赏，好人一生平安</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.png" alt="Jack Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.png" alt="Jack Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Jack Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tmgycsz.github.io/2019/03/11/String笔记/" title="String笔记">https://tmgycsz.github.io/2019/03/11/String笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Javascript原生对象/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>Javascript原生对象</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/05/Array笔记/" rel="next" title="Array笔记">
+                <i class="fa fa-chevron-left"></i> Array笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="Jack Chen">
+            
+              <p class="site-author-name" itemprop="name">Jack Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tmgycsz" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/8093355/#!/" target="_blank" title="bilibili">
+                      
+                        <i class="fa fa-fw fa-tv"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.ruanyifeng.com/home.html" title="Title" target="_blank">Title</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原生对象String"><span class="nav-number">2.</span> <span class="nav-text">原生对象String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性和方法使用"><span class="nav-number">2.1.</span> <span class="nav-text">属性和方法使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#length属性"><span class="nav-number">2.1.1.</span> <span class="nav-text">length属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#name属性"><span class="nav-number">2.1.2.</span> <span class="nav-text">name属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fromCharCode-方法"><span class="nav-number">2.1.3.</span> <span class="nav-text">fromCharCode()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fromCodePoint-方法。"><span class="nav-number">2.2.</span> <span class="nav-text">fromCodePoint()方法。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数String"><span class="nav-number">3.</span> <span class="nav-text">函数String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建规范"><span class="nav-number">3.1.</span> <span class="nav-text">创建规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法（es5）"><span class="nav-number">3.2.</span> <span class="nav-text">实例方法（es5）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#charAt-方法"><span class="nav-number">3.2.1.</span> <span class="nav-text">charAt()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#concat-方法"><span class="nav-number">3.2.2.</span> <span class="nav-text">concat()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#indexOf-方法"><span class="nav-number">3.2.3.</span> <span class="nav-text">indexOf()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lastIndexOf-方法"><span class="nav-number">3.2.4.</span> <span class="nav-text">lastIndexOf()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#slice-方法"><span class="nav-number">3.2.5.</span> <span class="nav-text">slice()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#split-方法"><span class="nav-number">3.2.6.</span> <span class="nav-text">split()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substring-方法"><span class="nav-number">3.2.7.</span> <span class="nav-text">substring()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toUpperCase-方法，toLocaleUpperCase-方法"><span class="nav-number">3.2.8.</span> <span class="nav-text">toUpperCase()方法，toLocaleUpperCase()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toLowerCase-方法，toLocaleLowerCase-方法"><span class="nav-number">3.2.9.</span> <span class="nav-text">toLowerCase()方法，toLocaleLowerCase()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#valueOf-方法，toString-方法"><span class="nav-number">3.2.10.</span> <span class="nav-text">valueOf()方法，toString()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trim-方法"><span class="nav-number">3.2.11.</span> <span class="nav-text">trim()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例方法（ES6）"><span class="nav-number">3.3.</span> <span class="nav-text">实例方法（ES6）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#includes-方法"><span class="nav-number">3.3.1.</span> <span class="nav-text">includes()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#startWith-方法"><span class="nav-number">3.3.2.</span> <span class="nav-text">startWith()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#endWith-方法"><span class="nav-number">3.3.3.</span> <span class="nav-text">endWith()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#padStart-方法，-padEnd-方法"><span class="nav-number">3.3.4.</span> <span class="nav-text">padStart()方法， padEnd()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#repeat-方法"><span class="nav-number">3.3.5.</span> <span class="nav-text">repeat()方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright"><font color="black" face="kaiti">Copyright  </font><font color="black">©</font> <font color="black" face="kaiti">2018 - </font><font color="black" face="kaiti"><span itemprop="copyrightYear">2019</span></font>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder" style="font-family:kaiti;color:black;">Jack Chen . All Rights Reserved.</span>
+</div>
+<!--此处为建站时间 -->
+<script>
+    var now = new Date();
+    function createtime() {
+    var grt= new Date("04/17/2017 20:01:01");
+    now.setTime(now.getTime()+250);
+    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+    document.getElementById("timeDate").innerHTML =dnum+" 天";
+    document.getElementById("times").innerHTML = hnum + " 时" + mnum + " 分" + snum + " 秒";
+}
+setInterval("createtime()",250);
+</script>
+
+
+        
+<div class="busuanzi-count">
+  <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <font color="DarkSlateGray" face="kaiti"><span class="site-uv" title="访问人数">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
+    </span><span class="post-meta-divider">|</span></font>
+    <font color="DarkSlateGray" face="kaiti">
+    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">16.0k</span>字,</span>
+    <span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span><span class="post-meta-divider">|</span>
+    </font>
+  
+
+  
+    <font color="DarkSlateGray" face="kaiti"><span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span></font>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'dHAGLgRYVcYtd02p3WpBLKiQ-gzGzoHsz',
+        appKey: 'DtL0hVwsWFyrDdw4QPWhg9zR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("dHAGLgRYVcYtd02p3WpBLKiQ-gzGzoHsz", "DtL0hVwsWFyrDdw4QPWhg9zR");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Douban,QQZone";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
