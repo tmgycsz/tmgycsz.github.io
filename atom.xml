@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tmgycsz.github.io/"/>
-  <updated>2019-03-11T07:59:44.156Z</updated>
+  <updated>2019-03-29T03:16:09.489Z</updated>
   <id>https://tmgycsz.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文字，英文溢出的处理方法</title>
+    <link href="https://tmgycsz.github.io/2019/03/29/%E8%A1%A8%E6%A0%BC%E8%8B%B1%E6%96%87%E5%8D%95%E8%AF%8D%E6%88%AA%E6%96%AD%E5%A4%84%E7%90%86/"/>
+    <id>https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/</id>
+    <published>2019-03-29T01:42:19.276Z</published>
+    <updated>2019-03-29T03:16:09.489Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。</p><h3 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h3><h4 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a><code>word-break</code></h4><div class="note info"><p>属性值，这些属性值对于<code>CJK</code> (<code>CJK</code> 指中文/日文/韩文) 文本和其它文本又有不同的表现形式</p></div><ol><li><code>word-break</code>: <code>normal</code>;</li><li><code>word-break</code>: <code>break-all</code>;</li><li><code>word-break</code>: <code>keep-all</code>;</li><li><code>word-break</code>: <code>break-word</code>;</li></ol><div class="note info"><p>对于<code>non-CJK</code> (CJK 指中文/日文/韩文) 文本。这里以英文举例</p></div><ol><li><code>normal</code>和<code>keep-all</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。</li></ol><p><img src="https://i.imgur.com/9bTN7JK.png" alt><br><img src="https://i.imgur.com/ew4KZG2.png" alt></p><ol start="2"><li><code>break-all</code>：队尾放不下一个单词的时候，先用单词前面的字母挤满这一行，多余的字母换行显示。</li></ol><p><img src="https://i.imgur.com/CZVaVkr.png" alt></p><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一
+      
+    
+    </summary>
+    
+      <category term="css" scheme="https://tmgycsz.github.io/categories/css/"/>
+    
+    
+      <category term="日常bug" scheme="https://tmgycsz.github.io/tags/%E6%97%A5%E5%B8%B8bug/"/>
+    
+  </entry>
   
   <entry>
     <title>String笔记</title>
