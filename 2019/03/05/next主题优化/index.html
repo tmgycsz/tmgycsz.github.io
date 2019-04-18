@@ -149,15 +149,14 @@
 <meta property="og:site_name" content="陈小黑的blog">
 <meta property="og:description" content="前言最近博客更新了一下主题，由之前的yilia主题更新成集成功能更齐全的next。借此也把搭建博客和优化主题的过程记录一下。 搭建博客搭建环境 Node.js下载安装: https://nodejs.org/en/download/ git下载安装：https://git-scm.com/downloads hexo下载安装，搭建博客： 在桌面新建test目录，进入test目录右键选择git Ba">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/BSK3Bj2.png">
-<meta property="og:image" content="https://i.imgur.com/PXHv5IV.png">
-<meta property="og:image" content="https://i.imgur.com/gsO7sCG.png">
-<meta property="og:image" content="https://i.imgur.com/mgSv3nv.png">
-<meta property="og:updated_time" content="2019-03-05T10:13:46.973Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo3.png">
+<meta property="og:updated_time" content="2019-04-01T06:40:20.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="next主题优化">
 <meta name="twitter:description" content="前言最近博客更新了一下主题，由之前的yilia主题更新成集成功能更齐全的next。借此也把搭建博客和优化主题的过程记录一下。 搭建博客搭建环境 Node.js下载安装: https://nodejs.org/en/download/ git下载安装：https://git-scm.com/downloads hexo下载安装，搭建博客： 在桌面新建test目录，进入test目录右键选择git Ba">
-<meta name="twitter:image" content="https://i.imgur.com/BSK3Bj2.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo1.png">
 
 
 
@@ -424,8 +423,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T18:13:46+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T14:40:20+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -495,7 +494,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,440 字
+                  3,437 字
                 </span>
               
 
@@ -563,7 +562,7 @@
 <li><p>生成<code>ssh</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;邮件地址&quot;（注册github时的邮箱）</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>然后连续3次回车，复制密钥文件内容（路径形如<code>C:\Users\Administrator\.ssh\id_rsa.pub</code>），粘贴到<code>New SSH Key</code>即可。打开你的<code>github</code>主页，进入个人设置 -&gt; <code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>：<br><img src="https://i.imgur.com/BSK3Bj2.png" alt></p>
+<li><p>然后连续3次回车，复制密钥文件内容（路径形如<code>C:\Users\Administrator\.ssh\id_rsa.pub</code>），粘贴到<code>New SSH Key</code>即可。打开你的<code>github</code>主页，进入个人设置 -&gt; <code>SSH and GPG keys</code> -&gt; <code>New SSH key</code>：<br><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo1.png" alt>  </p>
 </li>
 </ul>
 </li>
@@ -605,7 +604,6 @@
 </li>
 <li><p>如果只想显示图标可以设置<code>social_icons</code>字段</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">social_icons:</span><br><span class="line">  enable: true</span><br><span class="line">  icons_only: true</span><br><span class="line">  transition: true</span><br></pre></td></tr></table></figure>
-<p> <img src="https://i.imgur.com/PXHv5IV.png" alt></p>
 </li>
 </ol>
 <h4 id="设置「背景动画」"><a href="#设置「背景动画」" class="headerlink" title="设置「背景动画」"></a>设置「背景动画」</h4><ol>
@@ -623,9 +621,9 @@
 </ol>
 <h4 id="配置-菜单栏"><a href="#配置-菜单栏" class="headerlink" title="配置 菜单栏"></a>配置 菜单栏</h4><ol>
 <li><p>修改<code>/test/themes/next</code>目录下的<code>_config.yml</code>文件，<code>menu</code>关键字下面的配置就是菜单栏，<code>next</code>的默认菜单配置</p>
-<p> <img src="https://i.imgur.com/gsO7sCG.png" alt><br>一般来说我们都会有自己的定制。给出我的配置以供参考</p>
+<p> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo2.png" alt><br>一般来说我们都会有自己的定制。给出我的配置以供参考</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  music: /music/ || music</span><br></pre></td></tr></table></figure>
-<p> || 后面的内容为菜单栏的图标icon，就是[Font Awesome][4]  图标名字</p>
+<p> || 后面的内容为菜单栏的图标icon，就是<a href="https://fontawesome.com/?from=io" target="_blank" rel="noopener">Font Awesome</a>  图标名字</p>
 <h4 id="配置优化-用户图像"><a href="#配置优化-用户图像" class="headerlink" title="配置优化 用户图像"></a>配置优化 用户图像</h4></li>
 <li><p>修改<code>/test/themes/next</code>目录下的<code>_config.yml</code>文件，设置<code>avatar</code> 为一张图片，把你喜欢的图片下载并放到 <code>/test/themes/next/source/images</code>文件夹中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: /images/&lt;图片名字&gt;.jpg</span><br></pre></td></tr></table></figure>
@@ -666,7 +664,7 @@
 </li>
 </ol>
 <h4 id="设置和优化打赏"><a href="#设置和优化打赏" class="headerlink" title="设置和优化打赏"></a>设置和优化打赏</h4><ol>
-<li>点击进入[在线生成二维码][5]生成自己的微信和支付宝二维码。下载下来保存到<code>/test/themes/next/source/images</code>中</li>
+<li>点击进入<a href="https://cli.im/" target="_blank" rel="noopener">在线生成二维码</a>生成自己的微信和支付宝二维码。下载下来保存到<code>/test/themes/next/source/images</code>中</li>
 <li><p>修改<code>/test/themes/next</code>目录下的<code>_config.yml</code>文件。找到<code>Reward</code>关键字进行配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-Reward</span><br><span class="line">reward_comment: 谢谢打赏，好人一生平安 （打赏的描述）</span><br><span class="line">wechatpay: /images/weixin.png （微信二维码）</span><br><span class="line">alipay: /images/zhifubao.png （支付宝二维码）</span><br></pre></td></tr></table></figure>
 </li>
@@ -720,9 +718,9 @@
 </li>
 </ol>
 <h4 id="添加评论系统Valine"><a href="#添加评论系统Valine" class="headerlink" title="添加评论系统Valine"></a>添加评论系统Valine</h4><ol>
-<li>请先注册[LeanCloud][6], 注册成功进入应用列表页面，创建应用。进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了。</li>
+<li>请先注册<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a>, 注册成功进入应用列表页面，创建应用。进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了。</li>
 </ol>
-<p><img src="https://i.imgur.com/mgSv3nv.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/hexo3.png" alt></p>
 <ol start="2">
 <li>打开<code>/test/themes/next/</code>下的<code>_config.yml</code>，找到<code>valine</code>，配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid:  dHAGLgRYVcYtd02p3WpBLKiQ-gzGzoHsz</span><br><span class="line">  appkey: DtL0hVwsWFyrDdw4QPWhg9zR</span><br><span class="line">  notify: false （邮件提醒，回复是否发送到邮箱）</span><br><span class="line">  verify: false （回复是否需要验证）</span><br><span class="line">  placeholder: Just go go （回复框占位符）</span><br><span class="line">  avatar: mm # gravatar style</span><br><span class="line">  guest_info: nick,mail,link （评论可以填写的信息）</span><br><span class="line">  pageSize: 10 # （每页显示多少条评论）</span><br></pre></td></tr></table></figure>
 </li>
@@ -941,7 +939,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -963,7 +961,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1095,7 +1093,7 @@ setInterval("createtime()",250);
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
     </span><span class="post-meta-divider">|</span></font>
     <font color="DarkSlateGray" face="kaiti">
-    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">16.3k</span>字,</span>
+    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">17.9k</span>字,</span>
     <span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span><span class="post-meta-divider">|</span>
     </font>
   

@@ -417,8 +417,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T18:13:46+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T14:40:20+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -488,7 +488,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,440 字
+                  3,437 字
                 </span>
               
 
@@ -599,6 +599,225 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/04/18/vue实现国际化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈小黑的blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/18/vue实现国际化/" itemprop="url">vue实现国际化</a></h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T14:34:07+08:00">
+                2019-04-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-18T14:43:08+08:00">
+                2019-04-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/18/vue实现国际化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/vue实现国际化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/18/vue实现国际化/" class="leancloud_visitors" data-flag-title="vue实现国际化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,270 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最近的一个项目要给到国外的运营人员使用，所以需要实现国际化。这里就简单介绍一下<code>v-cli</code>实现国际化的原理和需要注意的问题</p>
+</blockquote>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理是利用<a href="http://kazupon.github.io/vue-i18n/zh/" target="_blank" rel="noopener">vue-i18n</a>这个<code>vue</code>插件，配合官方文档可以帮助我们很方便的实现国际化。</p>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="安装vue-i18n插件"><a href="#安装vue-i18n插件" class="headerlink" title="安装vue-i18n插件"></a>安装<code>vue-i18n</code>插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n --save</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/18/vue实现国际化/" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -647,8 +866,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-29T11:16:09+08:00">
-                2019-03-29
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T15:28:12+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -718,7 +937,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  318 字
+                  574 字
                 </span>
               
 
@@ -734,7 +953,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -759,23 +978,31 @@
         
           
             <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。</p>
-<h3 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h3><h4 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a><code>word-break</code></h4><div class="note info"><p>属性值，这些属性值对于<code>CJK</code> (<code>CJK</code> 指中文/日文/韩文) 文本和其它文本又有不同的表现形式</p></div>
-<ol>
+<h3 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h3><div class="note info"><p>对于<code>non-CJK</code> (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例</p></div>
+<h4 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a><code>word-break</code></h4><ol>
 <li><code>word-break</code>: <code>normal</code>;</li>
 <li><code>word-break</code>: <code>break-all</code>;</li>
 <li><code>word-break</code>: <code>keep-all</code>;</li>
 <li><code>word-break</code>: <code>break-word</code>;</li>
 </ol>
-<div class="note info"><p>对于<code>non-CJK</code> (CJK 指中文/日文/韩文) 文本。这里以英文举例</p></div>
 <ol>
-<li><code>normal</code>和<code>keep-all</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。</li>
+<li><code>normal</code>和<code>keep-all</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png" alt></li>
+<li><code>break-all</code>：队尾放不下一个单词的时候，先用单词前面的字母挤满这一行，多余的字母换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/breakall.pn" alt></li>
+<li><code>break-word</code>：队尾放不下一个单词的时候，可以在半角空格或连字符处换行，没有半角空格或连字符处和<code>break-all</code>的规则保持一致。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png" alt></li>
 </ol>
-<p><img src="https://i.imgur.com/9bTN7JK.png" alt><br><img src="https://i.imgur.com/ew4KZG2.png" alt></p>
-<ol start="2">
-<li><code>break-all</code>：队尾放不下一个单词的时候，先用单词前面的字母挤满这一行，多余的字母换行显示。</li>
+<h4 id="word-wrap"><a href="#word-wrap" class="headerlink" title="word-wrap"></a><code>word-wrap</code></h4><ol>
+<li><code>word-wrap</code>: <code>normal</code>;</li>
+<li><code>word-wrap</code>: <code>break-word</code>;<div class="note info"><p>对于<code>non-CJK</code> (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例</p></div></li>
+<li><code>normal</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png" alt></li>
+<li><code>break-word</code>：队尾放不下一个单词的时候，可以在半角空格或连字符处换行，没有半角空格或连字符处先用单词前面的字母挤满这一行，多余的字母换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png" alt></li>
 </ol>
-<p><img src="https://i.imgur.com/CZVaVkr.png" alt></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>
+<div class="note info"><p>对于<code>CJK</code> (<code>CJK</code> 指中文/日文/韩文) 。这里以中文举例</p></div>
+<p>以上的6个css属性除了<code>word-break</code>: <code>keep-all</code>其它5个属性效果一致。</p>
+<ol>
+<li><code>word-break</code>: <code>keep-all</code>：只能在半角空格或连字符处换行，没有半角空格或连字符处超出部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/ckeep-all.png" alt></li>
+<li>其它5个属性：文字超出部分换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/cnormal.png" alt></li>
+</ol>
+<h3 id="实现文字超过省略号"><a href="#实现文字超过省略号" class="headerlink" title="实现文字超过省略号"></a>实现文字超过省略号</h3><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>
 
           
         
@@ -1091,8 +1318,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T20:13:32+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T10:16:13+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -1203,7 +1430,7 @@
         
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数组是我们平时编码中必不可少的一个重要，无论是数据的处理还是数据的传递，它都起到了至关重要的作用。无论是老版的JavaScript还是ES6都提供了大量的方法让我们来对数组进行处理。本文主要介绍Array对象的本质和它的相关属性，方法。</p>
 <h2 id="Array原型图"><a href="#Array原型图" class="headerlink" title="Array原型图"></a>Array原型图</h2><div class="note info"><p>原型链示意图</p></div>
-<p><img src="https://i.imgur.com/csxyIwi.png" alt><br>
+<p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.proto.png" alt><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/05/Array笔记/" rel="contents">
@@ -1308,8 +1535,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T10:20:27+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T11:27:54+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -1418,8 +1645,8 @@
       
         
         
-          <h2 id="自定义菜单"><a href="#自定义菜单" class="headerlink" title="自定义菜单"></a>自定义菜单</h2><p>最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。</p>
-<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图:"></a>最终效果图:</h3><p><img src="https://i.imgur.com/pOJbK8J.png" alt><br>
+          <h2 id="自定义菜单"><a href="#自定义菜单" class="headerlink" title="自定义菜单"></a>自定义菜单</h2><p>最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了<code>element admin</code>后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。</p>
+<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图:"></a>最终效果图:</h3><p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/meun.png" alt><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/05/vue实现鼠标右键点击自定义菜单/" rel="contents">
@@ -1524,8 +1751,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-04T15:33:09+08:00">
-                2019-03-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T11:52:55+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -1595,7 +1822,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,257 字
+                  1,268 字
                 </span>
               
 
@@ -1634,7 +1861,7 @@
       
         
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在之前的项目中，很多小的icon图片都是通过利用i标签的特性给它设置固定的宽高和背景来实现的。这种方法在项目大的时候一来需要依赖的图片会很多，二来css代码如果不规范的话也会出现很多问题。所以现在我在新项目中选择了阿里巴巴的矢量图标库来实现自定义IconFont 图标。<br>
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在之前的项目中，很多小的<code>icon</code>图片都是通过利用i标签的特性给它设置固定的宽高和背景来实现的。这种方法在项目大的时候一来需要依赖的图片会很多，二来css代码如果不规范的话也会出现很多问题。所以现在我在新项目中选择了<code>阿里巴巴的矢量图标库</code>来实现自定义<code>IconFont</code>图标。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/03/04/自定义IconFont图标/" rel="contents">
@@ -1691,7 +1918,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/04/编写可拖拽的弹窗/">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Chen">
@@ -1710,7 +1937,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/04/编写可拖拽的弹窗/" itemprop="url">编写可拖拽的弹窗</a></h1>
+                <a class="post-title-link" href="/2019/03/04/vue编写可拖拽的弹窗/" itemprop="url">编写可拖拽的弹窗</a></h1>
         
 
         <div class="post-meta">
@@ -1739,8 +1966,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-04T14:42:10+08:00">
-                2019-03-04
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T11:22:16+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -1776,8 +2003,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/04/编写可拖拽的弹窗/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/编写可拖拽的弹窗/" itemprop="commentCount"></span>
+                <a href="/2019/03/04/vue编写可拖拽的弹窗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/vue编写可拖拽的弹窗/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1785,7 +2012,7 @@
 
           
           
-             <span id="/2019/03/04/编写可拖拽的弹窗/" class="leancloud_visitors" data-flag-title="编写可拖拽的弹窗">
+             <span id="/2019/03/04/vue编写可拖拽的弹窗/" class="leancloud_visitors" data-flag-title="编写可拖拽的弹窗">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1810,7 +2037,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,578 字
+                  1,667 字
                 </span>
               
 
@@ -1850,12 +2077,12 @@
         
         
           <h2 id="可拖拽的弹窗"><a href="#可拖拽的弹窗" class="headerlink" title="可拖拽的弹窗"></a>可拖拽的弹窗</h2><blockquote>
-<p>在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。</p>
+<p>在刚刚重构完的项目中使用到了<code>element ui</code>框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的<code>dialog</code>弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。</p>
 </blockquote>
-<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。因为写的是vue，所以利用了vue的自定义指令来操作dom。</p>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理还是获取鼠标在<code>div</code>中的位置，获取位置后设置<code>div</code>的<code>left</code>和<code>top</code>来达到<code>div</code>跟随鼠标移动的效果。因为写的是<code>vue</code>，所以利用了<code>vue</code>的自定义指令来操作<code>dom</code>。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/03/04/编写可拖拽的弹窗/" rel="contents">
+            <a class="btn" href="/2019/03/04/vue编写可拖拽的弹窗/" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2164,7 +2391,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -2186,7 +2413,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2302,7 +2529,7 @@ setInterval("createtime()",250);
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
     </span><span class="post-meta-divider">|</span></font>
     <font color="DarkSlateGray" face="kaiti">
-    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">16.3k</span>字,</span>
+    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">17.9k</span>字,</span>
     <span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span><span class="post-meta-divider">|</span>
     </font>
   

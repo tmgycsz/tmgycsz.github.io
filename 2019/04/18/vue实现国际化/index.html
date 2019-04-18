@@ -128,7 +128,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="vue插件,">
 
 
 
@@ -141,14 +141,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://tmgycsz.github.io/categories/index.html">
+<meta name="description" content="前言 最近的一个项目要给到国外的运营人员使用，所以需要实现国际化。这里就简单介绍一下v-cli实现国际化的原理和需要注意的问题  实现原理主要的实现原理是利用vue-i18n这个vue插件，配合官方文档可以帮助我们很方便的实现国际化。 实现步骤安装vue-i18n插件1npm install vue-i18n --save">
+<meta name="keywords" content="vue插件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue实现国际化">
+<meta property="og:url" content="https://tmgycsz.github.io/2019/04/18/vue实现国际化/index.html">
 <meta property="og:site_name" content="陈小黑的blog">
+<meta property="og:description" content="前言 最近的一个项目要给到国外的运营人员使用，所以需要实现国际化。这里就简单介绍一下v-cli实现国际化的原理和需要注意的问题  实现原理主要的实现原理是利用vue-i18n这个vue插件，配合官方文档可以帮助我们很方便的实现国际化。 实现步骤安装vue-i18n插件1npm install vue-i18n --save">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-27T11:19:52.966Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/i18n-1.png">
+<meta property="og:updated_time" content="2019-04-18T06:43:08.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
+<meta name="twitter:title" content="vue实现国际化">
+<meta name="twitter:description" content="前言 最近的一个项目要给到国外的运营人员使用，所以需要实现国际化。这里就简单介绍一下v-cli实现国际化的原理和需要注意的问题  实现原理主要的实现原理是利用vue-i18n这个vue插件，配合官方文档可以帮助我们很方便的实现国际化。 实现步骤安装vue-i18n插件1npm install vue-i18n --save">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/i18n-1.png">
 
 
 
@@ -178,13 +184,13 @@
 
 
 
-  <link rel="canonical" href="https://tmgycsz.github.io/categories/">
+  <link rel="canonical" href="https://tmgycsz.github.io/2019/04/18/vue实现国际化/">
 
 
 
 
 
-  <title>分类 | 陈小黑的blog</title>
+  <title>vue实现国际化 | 陈小黑的blog</title>
   
 
 
@@ -353,40 +359,369 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/04/18/vue实现国际化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Chen">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈小黑的blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 7 个分类
+          <h1 class="post-title" itemprop="name headline">vue实现国际化</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T14:34:07+08:00">
+                2019-04-18
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-18T14:43:08+08:00">
+                2019-04-18
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/18/vue实现国际化/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/vue实现国际化/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/18/vue实现国际化/" class="leancloud_visitors" data-flag-title="vue实现国际化">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,270 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6 分钟
+                </span>
+              
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript原生对象/">Javascript原生对象</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hello/">hello</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue/">vue</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vue组件/">vue组件</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/常用工具/">常用工具</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最近的一个项目要给到国外的运营人员使用，所以需要实现国际化。这里就简单介绍一下<code>v-cli</code>实现国际化的原理和需要注意的问题</p>
+</blockquote>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理是利用<a href="http://kazupon.github.io/vue-i18n/zh/" target="_blank" rel="noopener">vue-i18n</a>这个<code>vue</code>插件，配合官方文档可以帮助我们很方便的实现国际化。</p>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="安装vue-i18n插件"><a href="#安装vue-i18n插件" class="headerlink" title="安装vue-i18n插件"></a>安装<code>vue-i18n</code>插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-i18n --save</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="使用vue-i18n"><a href="#使用vue-i18n" class="headerlink" title="使用vue-i18n"></a>使用<code>vue-i18n</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//HTML</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line"> &lt;p&gt;&#123;&#123; $t(&quot;message.hello&quot;) &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//JAVASCRIPT</span><br><span class="line">const messages = &#123;</span><br><span class="line">  en: &#123;</span><br><span class="line">    message: &#123;</span><br><span class="line">      hello: &apos;hello world&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  ja: &#123;</span><br><span class="line">    message: &#123;</span><br><span class="line">      hello: &apos;こんにちは、世界&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const i18n = new VueI18n(&#123;</span><br><span class="line">  locale: &apos;ja&apos;, // set locale</span><br><span class="line">  messages, // set locale messages</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">new Vue(&#123; i18n &#125;).$mount(&apos;#app&apos;)</span><br><span class="line"></span><br><span class="line">//OUTPUT</span><br><span class="line">&lt;div id=&quot;#app&quot;&gt;</span><br><span class="line">  &lt;p&gt;こんにちは、世界&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可以看到，我们在实例化Vue的时候，将i18n当做一个option传了进去。之后我们就可以在vue的组件里使用i18n了，使用方法：</p>
+</blockquote>
+<ul>
+<li>在组件的<code>template</code>中，调用<code>$t()</code>方法</li>
+</ul>
+<h3 id="v-cli项目中使用"><a href="#v-cli项目中使用" class="headerlink" title="v-cli项目中使用"></a><code>v-cli</code>项目中使用</h3><ol>
+<li><code>src</code>目录下新增<code>language</code>目录，<code>language</code>目录下新增<code>index.js</code>,<code>en.js</code>, <code>zh.js</code>。<br><code>en.js</code>和<code>zh.js</code>就是我们的语言包。必须保证语言包的内容是一一对应的。然后我们在<code>index.js</code>中完成设置。</li>
+<li><p><code>index.js</code>加入代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import VueI18n from &apos;vue-i18n&apos;;</span><br><span class="line">import locale from &apos;element-ui/lib/locale&apos;;</span><br><span class="line">import enLocale from &apos;element-ui/lib/locale/lang/en&apos;;</span><br><span class="line">import zhLocale from &apos;element-ui/lib/locale/lang/zh-CN&apos;;</span><br><span class="line">import en from &apos;./en&apos;;</span><br><span class="line">import zh from &apos;./zh&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(VueI18n);</span><br><span class="line">const DEFAULT_LANG = &apos;zh&apos;;</span><br><span class="line">const LOCALE_KEY = &apos;localeLanguage&apos;;</span><br><span class="line">const locales = &#123;</span><br><span class="line">  zh: &#123;</span><br><span class="line">    ...zh,</span><br><span class="line">    ...zhLocale,</span><br><span class="line">  &#125;,</span><br><span class="line">  en: &#123;</span><br><span class="line">    ...en,</span><br><span class="line">    ...enLocale,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const i18n = new VueI18n(&#123;</span><br><span class="line">  locale: DEFAULT_LANG,</span><br><span class="line">  messages: locales</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export const setup = lang =&gt; &#123;</span><br><span class="line">  if (lang === undefined) &#123;</span><br><span class="line">    lang = window.localStorage.getItem(LOCALE_KEY);</span><br><span class="line">    if (locales[lang] === undefined) &#123;</span><br><span class="line">      lang = DEFAULT_LANG;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  window.localStorage.setItem(LOCALE_KEY, lang);</span><br><span class="line">  </span><br><span class="line">  Object.keys(locales).forEach(lang =&gt; &#123;</span><br><span class="line">    document.body.classList.remove(`lang-$&#123;lang&#125;`);</span><br><span class="line">  &#125;)</span><br><span class="line">  document.body.classList.add(`lang-$&#123;lang&#125;`);</span><br><span class="line">  document.body.setAttribute(&apos;lang&apos;, lang);</span><br><span class="line">  Vue.config.lang = lang;</span><br><span class="line">  i18n.locale = lang;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setup();</span><br><span class="line">// window.i18n = i18n;</span><br><span class="line">locale.i18n((key, keypath) =&gt; i18n.t(key, keypath));</span><br><span class="line">export default i18n;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码说明</p>
+</li>
+</ol>
+<ul>
+<li>因为是要配合element使用，所以必须也导入element的语言包并配置，具体更多实施方案请见<a href="https://element.eleme.cn/2.0/#/zh-CN/component/i18n" target="_blank" rel="noopener">element国际化</a>。</li>
+<li>为了记住用户的习惯我们这里在localStorage中加入语言的缓存。保存用户切换的语言。避免重新进入时语言需要切换。</li>
+<li>英文文案大多相较过长，为了避免切换时页面适配出现问题我们可以在body上添加类名和自定义属性来适配不同语言。<br><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/i18n-1.png" alt></li>
+</ul>
+<ol start="4">
+<li><p><code>main.js</code>引入<code>index.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import App from &apos;./app.vue&apos;</span><br><span class="line">import store from &apos;./store&apos;</span><br><span class="line">import router from &apos;./router&apos;</span><br><span class="line">import i18n from &apos;./language/index&apos;;</span><br><span class="line">export const app = new Vue(&#123;</span><br><span class="line">  i18n,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">  render: h =&gt; h(App)</span><br><span class="line">&#125;).$mount(&quot;#app&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置语言包</p>
+</li>
+</ol>
+<ul>
+<li><p><code>en.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  m: &#123; </span><br><span class="line">      home: &apos;首页&apos;，</span><br><span class="line">      music: &apos;音乐&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>zh.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export default &#123;</span><br><span class="line">  m: &#123; </span><br><span class="line">      home: &apos;home&apos;，</span><br><span class="line">      music: &apos;music&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>至此，国际化的配置完成，我们就可以项目中使用了。</p>
+</blockquote>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><ol>
+<li><p>作为普通文本使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; $t(&apos;m.home&apos;) &#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配合属性使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:placeholder =&quot;$t(&apos;m.home&apos;)&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vue实例中使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$t(&apos;m.home&apos;)`</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="使用问题"><a href="#使用问题" class="headerlink" title="使用问题"></a>使用问题</h2><h3 id="非vue实例的js中使用"><a href="#非vue实例的js中使用" class="headerlink" title="非vue实例的js中使用"></a>非<code>vue</code>实例的<code>js</code>中使用</h3><p>日常中我们会封装一些<code>code.js</code>和<code>tools.js</code>。这些<code>js</code>并不能使用<code>vue</code>实例上的方法。但是也需要国际化。这个时候我们只能单独导入<code>i18n</code>来使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import i18n from &apos;../language/index&apos;;</span><br><span class="line">i18n.t(&apos;m.home&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="长文案加变量的翻译问题"><a href="#长文案加变量的翻译问题" class="headerlink" title="长文案加变量的翻译问题"></a>长文案加变量的翻译问题</h3><ul>
+<li>在翻译这样一句话 <code>我被用户 xxx 拉进一个群聊</code>的时候。英文的翻译是<code>I was dragged into a group chat by user xxx</code>。xxx出现的地方不一致这个时候我们就不能简单的直接设置<code>en.js</code>和<code>zh,js</code>进行转换。</li>
+<li>我们这里可以把这变量用一个字符替换，然后封装函数匹配变量进行替换 <code>我被用户 %s 拉进一个群聊</code>，<code>I was dragged into a group chat by user %s</code></li>
+<li><p>封装函数代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function tplParse(tpl, params) &#123;</span><br><span class="line">  let counter = 0;</span><br><span class="line">  if (params &amp;&amp; params.length &gt; 0) &#123;</span><br><span class="line">    let match;</span><br><span class="line">    while(match = tpl.match(/%s/)) &#123;</span><br><span class="line">      tpl = tpl.slice(0, match.index) + params[counter] + tpl.slice(match.index + 2);</span><br><span class="line">      counter ++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return tpl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第一个参数是需要替换的文案，第二个参数就是替换的变量</p>
+<h3 id="切换语言的时候遍历的数据无法生效。"><a href="#切换语言的时候遍历的数据无法生效。" class="headerlink" title="切换语言的时候遍历的数据无法生效。"></a>切换语言的时候遍历的数据无法生效。</h3><p>在切换语言的时候我们会发现，<code>router</code>的<code>index.js</code>中的语言无法切换。这是因为data是一次性生产的，平常的写法只能是在 data 初始化的时候拿到这些被国际化的值，并不能响应变化。查阅文案给出的方案是需要遍历的数据通过computed重新计算一遍在返回。由于出现的地方较多这种方案实现起来太复杂。暂时的解决方案是切换语言的时候刷新页面。</p>
+</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>到这里本篇文章就结束了，有问题的地方还请大家在评论区指出。</p>
+
       
     </div>
     
     
     
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size: 15px;letter-spacing: 5px;margin-top: 35px;">----------本文结束<i class="fa fa-paw"></i>感谢您的阅读-----------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>谢谢打赏，好人一生平安</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/weixin.png" alt="Jack Chen 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/zhifubao.png" alt="Jack Chen 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Jack Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tmgycsz.github.io/2019/04/18/vue实现国际化/" title="vue实现国际化">https://tmgycsz.github.io/2019/04/18/vue实现国际化/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue插件/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>vue插件</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/29/表格英文单词截断处理/" rel="next" title="文字，英文溢出的处理方法">
+                <i class="fa fa-chevron-left"></i> 文字，英文溢出的处理方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -395,6 +730,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -415,8 +757,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -515,6 +866,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现步骤"><span class="nav-number">3.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装vue-i18n插件"><span class="nav-number">3.1.</span> <span class="nav-text">安装vue-i18n插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用vue-i18n"><span class="nav-number">3.2.</span> <span class="nav-text">使用vue-i18n</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-cli项目中使用"><span class="nav-number">3.3.</span> <span class="nav-text">v-cli项目中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">3.4.</span> <span class="nav-text">使用方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用问题"><span class="nav-number">4.</span> <span class="nav-text">使用问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非vue实例的js中使用"><span class="nav-number">4.1.</span> <span class="nav-text">非vue实例的js中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长文案加变量的翻译问题"><span class="nav-number">4.2.</span> <span class="nav-text">长文案加变量的翻译问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换语言的时候遍历的数据无法生效。"><span class="nav-number">4.3.</span> <span class="nav-text">切换语言的时候遍历的数据无法生效。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">5.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -149,12 +149,12 @@
 <meta property="og:site_name" content="陈小黑的blog">
 <meta property="og:description" content="自定义菜单最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。 最终效果图:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/pOJbK8J.png">
-<meta property="og:updated_time" content="2019-03-05T02:20:27.945Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/meun.png">
+<meta property="og:updated_time" content="2019-04-01T03:27:54.280Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="右键自定义菜单">
 <meta name="twitter:description" content="自定义菜单最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。 最终效果图:">
-<meta name="twitter:image" content="https://i.imgur.com/pOJbK8J.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/meun.png">
 
 
 
@@ -417,8 +417,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T10:20:27+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T11:27:54+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -525,8 +525,8 @@
       
 
       
-        <h2 id="自定义菜单"><a href="#自定义菜单" class="headerlink" title="自定义菜单"></a>自定义菜单</h2><p>最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了element admin后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。</p>
-<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图:"></a>最终效果图:</h3><p><img src="https://i.imgur.com/pOJbK8J.png" alt><br><a id="more"></a></p>
+        <h2 id="自定义菜单"><a href="#自定义菜单" class="headerlink" title="自定义菜单"></a>自定义菜单</h2><p>最近的后台管理项目中使用到了右侧标签栏方便用户切换不同模块。但当标签栏过多时一个个关闭明显示是反人类的，所以参考了<code>element admin</code>后写了一个自定义指令来实现点击鼠标右键实现自定义菜单。</p>
+<h3 id="最终效果图"><a href="#最终效果图" class="headerlink" title="最终效果图:"></a>最终效果图:</h3><p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/meun.png" alt><br><a id="more"></a></p>
 <h2 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h2><h3 id="ui部分"><a href="#ui部分" class="headerlink" title="ui部分"></a>ui部分</h3><div class="note info"><p>html代码：</p></div>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;tags_div&quot; v-menus&gt;</span><br><span class="line">    &lt;el-tag&gt;右键点击&lt;/el-tag&gt;</span><br><span class="line">    &lt;ul class=&quot;contextmenu&quot; :style=&quot;&#123;&apos;left&apos;: menuLeft, &apos;top&apos;: menuTop&#125;&quot; v-show=&quot;menuShow&quot;&gt;</span><br><span class="line">        &lt;li&gt;刷新&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭其它&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;关闭所有&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <div class="note success"><p>css代码：</p></div>
@@ -534,24 +534,24 @@
 <p>这块没什么好说的，主要是设置子相父绝定位，鼠标点击的时候好去设置菜单栏的位置。</p>
 <h2 id="自定义指令实现右键菜单栏"><a href="#自定义指令实现右键菜单栏" class="headerlink" title="自定义指令实现右键菜单栏"></a>自定义指令实现右键菜单栏</h2><p>自定义指令我在上篇已经介绍过了，这里主要说一下设计到的相关事件和属性（上篇自定义拖拽弹窗介绍过的这里不再列出）。</p>
 <h3 id="相关属性-事件对象event，dom元素"><a href="#相关属性-事件对象event，dom元素" class="headerlink" title="相关属性(事件对象event，dom元素)"></a>相关属性(事件对象event，dom元素)</h3><ol>
-<li>event.pageX：pageX事件属性返回当事件被触发时鼠标指针向对于html的body的水平坐标。</li>
-<li>event.pageY：pageY事件属性返回当事件被触发时鼠标指针向对于html的body垂直坐标。</li>
-<li>offsetParent属性：可以返回当前元素上个定位父级元素。</li>
+<li><code>event.pageX：pageX</code>事件属性返回当事件被触发时鼠标指针向对于<code>html</code>的<code>body</code>的水平坐标。</li>
+<li><code>event.pageY：pageY</code>事件属性返回当事件被触发时鼠标指针向对于<code>html</code>的<code>body</code>垂直坐标。</li>
+<li><code>offsetParen</code>t属性：可以返回当前元素上个定位父级元素。</li>
 </ol>
 <h3 id="相关事件"><a href="#相关事件" class="headerlink" title="相关事件"></a>相关事件</h3><ol>
-<li>oncontextmenu：事件在元素中用户点击鼠标右键时触发。</li>
-<li>onmouseup：在用户松开鼠标按键时触发。</li>
+<li><code>oncontextmenu</code>：事件在元素中用户点击鼠标右键时触发。</li>
+<li><code>onmouseup</code>：在用户松开鼠标按键时触发。</li>
 </ol>
 <h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><div class="note default"><p>vue代码：</p></div>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">    menus: &#123;</span><br><span class="line">      inserted: function (el, binding, vnode) &#123;</span><br><span class="line">        //获取vue实例对象</span><br><span class="line">        let vm = vnode.context;</span><br><span class="line">        let showFlag = true;</span><br><span class="line">        vnode = vnode.elm;</span><br><span class="line">        //阻止默认浏览器的右键菜单</span><br><span class="line">        el.oncontextmenu = ((event) =&gt; &#123;</span><br><span class="line">          event.preventDefault();</span><br><span class="line">        &#125;);</span><br><span class="line">        el.onmouseup = ((event) =&gt; &#123;</span><br><span class="line">          if (event.button === 2) &#123;</span><br><span class="line">              vm.menuShow = true;</span><br><span class="line">              showFlag = false;</span><br><span class="line">              let realTop = vm.getElementToPageTop(vnode);</span><br><span class="line">              let realLeft = vm.getElementToPageLeft(vnode);</span><br><span class="line">              let top = event.pageY - realTop + 5 + &apos;px&apos;;</span><br><span class="line">              let left = event.pageX - realLeft + 5 + &apos;px&apos;;</span><br><span class="line">              vm.menuLeft = left;</span><br><span class="line">              vm.menuTop = top;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        document.onmouseup = (() =&gt; &#123;</span><br><span class="line">          if (showFlag) &#123;</span><br><span class="line">            vm.menuShow = false;</span><br><span class="line">          &#125;</span><br><span class="line">          showFlag = true;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">//vue实例数据</span><br><span class="line">data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        menuShow: false,</span><br><span class="line">        menuLeft: 0,</span><br><span class="line">        menuTop: 0,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">//获取当前元素距离body原点的距离</span><br><span class="line">methods: &#123;</span><br><span class="line">    getElementToPageTop: function (el) &#123;</span><br><span class="line">       if (el.offsetParent) &#123;</span><br><span class="line">         return this.getElementToPageTop(el.offsetParent) + el.offsetTop;</span><br><span class="line">        &#125;</span><br><span class="line">       return el.offsetTop;</span><br><span class="line">    &#125;,</span><br><span class="line">    getElementToPageLeft: function (el) &#123;</span><br><span class="line">       if (el.offsetParent) &#123;</span><br><span class="line">         return this.getElementToPageLeft(el.offsetParent) + el.offsetLeft;</span><br><span class="line">       &#125;</span><br><span class="line">       return el.offsetLeft;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><ol>
-<li>首先是通过oncontextmenu阻止浏览器的上下文菜单，在绑定onmouseup事件判断鼠标右键点击。</li>
-<li>获取当前元素距离body顶端的距离,在与鼠标在页面中的实际距离想减获取鼠标在div中的位置，进而设置菜单栏出现的位置。</li>
-<li>给document绑定onmouseup事件，点击页面其他地方关闭菜单栏。</li>
+<li>首先是通过<code>oncontextmenu</code>阻止浏览器的上下文菜单，在绑定<code>onmouseup</code>事件判断鼠标右键点击。</li>
+<li>获取当前元素距离<code>body</code>顶端的距离,在与鼠标在页面中的实际距离想减获取鼠标在div中的位置，进而设置菜单栏出现的位置。</li>
+<li>给<code>document</code>绑定<code>onmouseup</code>事件，点击页面其他地方关闭菜单栏。</li>
 </ol>
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><ol>
-<li>获取当前元素距离body顶端的距离要判断当前元素有没有上级定位元素，如果有当前元素距离body顶端的距离是它的距离body顶端的距离与定位父级距离body顶端的距离之和。这里我写了两个递归来实现距离的计算getElementToPageTop，getElementToPageLeft。</li>
-<li>点击其它的地方关闭菜单栏，这里在自定义指定的元素上点击右键时设置了一个标识，只有当这个标识为false的时候才不会关闭菜单栏。</li>
+<li>获取当前元素距离<code>body</code>顶端的距离要判断当前元素有没有上级定位元素，如果有当前元素距离<code>body</code>顶端的距离是它的距离<code>body</code>顶端的距离与定位父级距离<code>body</code>顶端的距离之和。这里我写了两个递归来实现距离的计算<code>getElementToPageTop</code>，<code>getElementToPageLeft</code>。</li>
+<li>点击其它的地方关闭菜单栏，这里在自定义指定的元素上点击右键时设置了一个标识，只有当这个标识为<code>false</code>的时候才不会关闭菜单栏。</li>
 </ol>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>
 
@@ -750,7 +750,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -772,7 +772,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -904,7 +904,7 @@ setInterval("createtime()",250);
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
     </span><span class="post-meta-divider">|</span></font>
     <font color="DarkSlateGray" face="kaiti">
-    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">16.3k</span>字,</span>
+    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">17.9k</span>字,</span>
     <span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span><span class="post-meta-divider">|</span>
     </font>
   

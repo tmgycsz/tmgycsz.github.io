@@ -128,7 +128,7 @@
 
 
 
-  <meta name="keywords" content="日常bug,">
+  <meta name="keywords" content="vue组件,">
 
 
 
@@ -141,26 +141,23 @@
 
 
 
-<meta name="description" content="前言平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。 相关属性对于non-CJK (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例 word-br">
-<meta name="keywords" content="日常bug">
+<meta name="description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
+<meta name="keywords" content="vue组件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文字，英文溢出的处理方法">
-<meta property="og:url" content="https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/index.html">
+<meta property="og:title" content="编写可拖拽的弹窗">
+<meta property="og:url" content="https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/index.html">
 <meta property="og:site_name" content="陈小黑的blog">
-<meta property="og:description" content="前言平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。 相关属性对于non-CJK (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例 word-br">
+<meta property="og:description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/breakall.pn">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/ckeep-all.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/cnormal.png">
-<meta property="og:updated_time" content="2019-04-01T07:28:12.733Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-props.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-event.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-single.png">
+<meta property="og:updated_time" content="2019-04-01T03:22:16.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="文字，英文溢出的处理方法">
-<meta name="twitter:description" content="前言平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。 相关属性对于non-CJK (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例 word-br">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png">
+<meta name="twitter:title" content="编写可拖拽的弹窗">
+<meta name="twitter:description" content="可拖拽的弹窗 在刚刚重构完的项目中使用到了element ui框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的dialog弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。  实现原理主要的实现原理还是获取鼠标在div中的位置，获取位置后设置div的left和top来达到div跟随鼠标移动的效果。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag.png">
 
 
 
@@ -190,13 +187,13 @@
 
 
 
-  <link rel="canonical" href="https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/">
+  <link rel="canonical" href="https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/">
 
 
 
 
 
-  <title>文字，英文溢出的处理方法 | 陈小黑的blog</title>
+  <title>编写可拖拽的弹窗 | 陈小黑的blog</title>
   
 
 
@@ -377,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/">
+    <link itemprop="mainEntityOfPage" href="https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Chen">
@@ -394,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">文字，英文溢出的处理方法</h1>
+          <h1 class="post-title" itemprop="name headline">编写可拖拽的弹窗</h1>
         
 
         <div class="post-meta">
@@ -407,8 +404,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-29T09:42:19+08:00">
-                2019-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-04T14:09:28+08:00">
+                2019-03-04
               </time>
             
 
@@ -423,7 +420,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T15:28:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T11:22:16+08:00">
                 2019-04-01
               </time>
             
@@ -442,8 +439,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/vue组件/" itemprop="url" rel="index">
+                    <span itemprop="name">vue组件</span>
                   </a>
                 </span>
 
@@ -460,8 +457,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/29/表格英文单词截断处理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/29/表格英文单词截断处理/" itemprop="commentCount"></span>
+                <a href="/2019/03/04/vue编写可拖拽的弹窗/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/04/vue编写可拖拽的弹窗/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -469,7 +466,7 @@
 
           
           
-             <span id="/2019/03/29/表格英文单词截断处理/" class="leancloud_visitors" data-flag-title="文字，英文溢出的处理方法">
+             <span id="/2019/03/04/vue编写可拖拽的弹窗/" class="leancloud_visitors" data-flag-title="编写可拖拽的弹窗">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -494,7 +491,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  574 字
+                  1,667 字
                 </span>
               
 
@@ -510,7 +507,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  7 分钟
                 </span>
               
             </div>
@@ -531,32 +528,76 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>平时做后台系统表格的时候总会遇到2种情况，一是表格中文字过长需要换行，也有客户希望表格高度一致，文字溢出隐藏显示…的要求。以往都是随便百度一下就写了。但是最近在做国际化的时候英文单词换行会出现单词被截断情况。借此我重新翻阅了下文档。本篇文章就介绍一下文字溢出的处理的方法和相关css属性。</p>
-<h3 id="相关属性"><a href="#相关属性" class="headerlink" title="相关属性"></a>相关属性</h3><div class="note info"><p>对于<code>non-CJK</code> (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例</p></div>
-<h4 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a><code>word-break</code></h4><ol>
-<li><code>word-break</code>: <code>normal</code>;</li>
-<li><code>word-break</code>: <code>break-all</code>;</li>
-<li><code>word-break</code>: <code>keep-all</code>;</li>
-<li><code>word-break</code>: <code>break-word</code>;</li>
+        <h2 id="可拖拽的弹窗"><a href="#可拖拽的弹窗" class="headerlink" title="可拖拽的弹窗"></a>可拖拽的弹窗</h2><blockquote>
+<p>在刚刚重构完的项目中使用到了<code>element ui</code>框架，踩了不少坑也学到了不少的东西。其中比较麻烦的是它的<code>dialog</code>弹窗组件是无法移动拖拽的，然而客户又强烈的要求一定要有这个功能，所以就自己写了个可拖拽的弹窗组件。虽然拖拽起来不是很流畅，但是也算是满足要求了。</p>
+</blockquote>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>主要的实现原理还是获取鼠标在<code>div</code>中的位置，获取位置后设置<code>div</code>的<code>left</code>和<code>top</code>来达到<code>div</code>跟随鼠标移动的效果。因为写的是<code>vue</code>，所以利用了<code>vue</code>的自定义指令来操作<code>dom</code>。</p>
+<a id="more"></a>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><h3 id="设计盒子ui"><a href="#设计盒子ui" class="headerlink" title="设计盒子ui"></a>设计盒子ui</h3><ol>
+<li><p>老实说，我经常被吐槽没有审美，设计的样式总是被喷。好在这次是<code>dialog</code>弹窗，网上有大把的参考样式。我大体参考了<code>layer</code>的弹窗做出了一个山寨弹窗。</p>
+<ul>
+<li><p>html代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line"> &lt;div class=&quot;m_showBox&quot; :class=&quot;skin&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;showBox_mask&quot;&gt;&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;loading_wrap&quot; v-if=&quot;buttonstatus === 1&quot;&gt;&lt;/div&gt;</span><br><span class="line">   &lt;div class=&quot;pop_box&quot; id=&quot;pox-box&quot; v-drag&gt;</span><br><span class="line">     &lt;p class=&quot;pop_box_title&quot;&gt;</span><br><span class="line">       &#123;&#123;title || &quot;提示&quot;&#125;&#125;</span><br><span class="line">       &lt;span class=&quot;pop_box_close&quot; @click=&quot;cancel&quot;&gt;&lt;/span&gt;</span><br><span class="line">     &lt;/p&gt;</span><br><span class="line">     &lt;div class=&quot;pop_box_content&quot;&gt;</span><br><span class="line">       &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">     &lt;div class=&quot;pop_box_bottom&quot;&gt;</span><br><span class="line">       &lt;a href=&quot;javascript:;&quot;</span><br><span class="line">          class=&quot;cancel_btn&quot;</span><br><span class="line">          @click=&quot;cancel&quot;&gt;&#123;&#123;canceltext || &quot;取消&quot;&#125;&#125;&lt;/a&gt;</span><br><span class="line">       &lt;a href=&quot;javascript:;&quot;</span><br><span class="line">          class=&quot;confirm_btn&quot;</span><br><span class="line">          v-if=&quot;type === &apos;confirm&apos;&quot;</span><br><span class="line">          :class=&quot;&#123;widths: buttonstatus === 1&#125;&quot;</span><br><span class="line">          @click=&quot;confirm&quot;&gt;</span><br><span class="line">         &lt;svg viewBox=&quot;25 25 50 50&quot; class=&quot;u-circular&quot; v-if=&quot;buttonstatus === 1&quot;&gt;</span><br><span class="line">           &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;20&quot; fill=&quot;none&quot; class=&quot;path&quot;&gt;&lt;/circle&gt;</span><br><span class="line">         &lt;/svg&gt;</span><br><span class="line">         &lt;span :class=&quot;&#123;&apos;marginLeft&apos;: buttonstatus === 1&#125;&quot;&gt;&#123;&#123;confirmtext || &apos;确定&apos;&#125;&#125;&lt;/span&gt;</span><br><span class="line">       &lt;/a&gt;</span><br><span class="line">     &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>css</code>代码太长放到<code>github</code>上了[vueDrag.vue][1]</p>
+</li>
+<li><p>效果图：</p>
+<p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag.png" alt></p>
+</li>
+</ul>
+</li>
+<li><p>设计要点:</p>
+<ul>
+<li>背景遮罩<br>我这里选择了使用了3个遮罩板，第一块是覆盖全屏幕的白色遮罩<code>m_showBox</code>使用fixed定位，让弹窗的所有内容与浏览器之间不会出现留白。第2块就是上图看到的灰色背景<code>showBox_mask</code>，用来突显弹窗。最后一块是点击确定的遮罩窗<code>loading_wrap</code>，来防止提交<code>ajax</code>时，用户点击按钮或修改弹窗数据。</li>
+<li>弹窗构成<br>这里的弹窗就包括标题，内容和底部部分。内容部分通过插槽插入内容，底部按钮通过<code>svg</code>来实现提交加载的<code>loading</code>效果。</li>
+</ul>
+</li>
 </ol>
+<h3 id="定义组件props"><a href="#定义组件props" class="headerlink" title="定义组件props"></a>定义组件<code>props</code></h3><p>通过传入的<code>props</code>值来设置弹窗的样式和文案。<br><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-props.png" alt></p>
+<h3 id="自定义事件实现按钮回调"><a href="#自定义事件实现按钮回调" class="headerlink" title="自定义事件实现按钮回调"></a>自定义事件实现按钮回调</h3><p><code>confirm</code>和<code>cancel</code>自定义事件，定义自定义按钮事件，使用<code>$emit</code>触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    cancel: function () &#123;</span><br><span class="line">      this.$emit(&quot;cancel&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    confirm: function () &#123;</span><br><span class="line">      if (this.buttonstatus === 1) &#123;</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line">      this.$emit(&quot;confirm&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
+<h3 id="自定义指令drag实现拖拽效果"><a href="#自定义指令drag实现拖拽效果" class="headerlink" title="自定义指令drag实现拖拽效果"></a>自定义指令<code>drag</code>实现拖拽效果</h3><h4 id="vue的directives。"><a href="#vue的directives。" class="headerlink" title="vue的directives。"></a><code>vue</code>的<code>directives</code>。</h4><p>通过<code>vue</code>自定义指令获取绑定的元素，在对<code>DOM</code>进行操作。关于更多<code>vue</code>自定义指令用法，移步<a href="https://cn.vuejs.org/v2/guide/custom-directive.html" target="_blank" rel="noopener">自定义指令</a></p>
+<h4 id="相关属性-事件对象event，dom元素，window对象-。"><a href="#相关属性-事件对象event，dom元素，window对象-。" class="headerlink" title="相关属性(事件对象event，dom元素，window对象)。"></a>相关属性(事件对象<code>event</code>，<code>dom</code>元素，<code>window</code>对象)。</h4><ol>
+<li><code>event.clientX</code>：<code>clientX</code>事件属性返回当事件被触发时鼠标指针向对于浏览器可视区域的水平坐标。</li>
+<li><code>event.clientY</code>：<code>clientY</code>事件属性返回当事件被触发时鼠标指针向对于浏览器页面可视区域的垂直坐标。</li>
+<li><code>offsetLeft/offsetLeftTop</code>属性：可以返回当前元素距离某个定位父辈元素左边与顶部的距离（虽然我的父级遮罩层有了定位，但是它的宽高都是与<code>body</code>保持一致的）。</li>
+<li><code>offsetWidth/offsetHeight</code>: 返回任何一个元素宽/高度，包括边框和填充</li>
+<li><code>window.innerHeight/Width</code>: 获取当前页面可视区的宽高（包括滚动条）。</li>
+</ol>
+<h4 id="相关事件"><a href="#相关事件" class="headerlink" title="相关事件"></a>相关事件</h4><p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-event.png" alt></p>
+<h4 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">directives: &#123;</span><br><span class="line">      drag: &#123;</span><br><span class="line">        inserted: <span class="function"><span class="keyword">function</span> (<span class="params">el, binding, vnode</span>) </span>&#123;</span><br><span class="line">          vnode = vnode.elm;</span><br><span class="line">          el.onmousedown = <span class="function">(<span class="params">(event</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (event.target.className !== <span class="string">"pop_box_title"</span>) &#123;</span><br><span class="line">              <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//获取鼠标在盒子中的位置</span></span><br><span class="line">            <span class="keyword">let</span> mouseX = event.clientX - vnode.offsetLeft;</span><br><span class="line">            <span class="keyword">let</span> mouseY = event.clientY - vnode.offsetTop;</span><br><span class="line">            <span class="comment">//绑定移动和停止函数</span></span><br><span class="line">            <span class="built_in">document</span>.onmousemove = <span class="function">(<span class="params">(event</span>) =&gt;</span> &#123;</span><br><span class="line">              <span class="keyword">let</span> left, top;</span><br><span class="line">              <span class="comment">//获取新的鼠标位置对应下的盒子应该在的位置</span></span><br><span class="line">              left = event.clientX - mouseX;</span><br><span class="line">              top = event.clientY - mouseY;</span><br><span class="line">              <span class="comment">//获取div在页面中X轴的最小最大位置</span></span><br><span class="line">              <span class="keyword">let</span> minX = vnode.offsetWidth / <span class="number">2</span>;</span><br><span class="line">              <span class="keyword">let</span> maxX = (<span class="built_in">window</span>.innerWidth - vnode.offsetWidth / <span class="number">2</span>) - <span class="number">10</span><span class="comment">//去掉滚动条的宽度</span></span><br><span class="line">              <span class="keyword">if</span> (left &lt;= minX) &#123;</span><br><span class="line">                left = minX;</span><br><span class="line">              &#125; <span class="keyword">else</span> <span class="keyword">if</span> (left &gt;= maxX) &#123;</span><br><span class="line">                left = maxX;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="comment">//获取div在页面中Y轴的最大最小位置</span></span><br><span class="line">              <span class="keyword">let</span> minY = vnode.offsetHeight / <span class="number">2</span>;</span><br><span class="line">              <span class="keyword">let</span> maxY = (<span class="built_in">window</span>.innerHeight - vnode.offsetHeight / <span class="number">2</span>);</span><br><span class="line">              <span class="keyword">if</span> (top &lt;= minY) &#123;</span><br><span class="line">                top = minY;</span><br><span class="line">              &#125; <span class="keyword">else</span> <span class="keyword">if</span> (top &gt;= maxY) &#123;</span><br><span class="line">                top = maxY;</span><br><span class="line">              &#125;</span><br><span class="line">              <span class="comment">//赋值移动</span></span><br><span class="line">              vnode.style.left = left + <span class="string">'px'</span>;</span><br><span class="line">              vnode.style.top = top + <span class="string">'px'</span>;</span><br><span class="line">           &#125;);</span><br><span class="line">           <span class="built_in">document</span>.onmouseup = <span class="function">(<span class="params">(</span>) =&gt;</span> &#123;</span><br><span class="line">             <span class="built_in">document</span>.onmousemove = <span class="built_in">document</span>.onmouseup = <span class="literal">null</span>;</span><br><span class="line">           &#125;);</span><br><span class="line">         &#125;);</span><br><span class="line">         <span class="built_in">window</span>.onresize = <span class="function">(<span class="params">(</span>) =&gt;</span>&#123;</span><br><span class="line">            vnode.style.left = <span class="string">"50%"</span>;</span><br><span class="line">            vnode.style.top = <span class="string">"50%"</span>;</span><br><span class="line">         &#125;);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h4><ol>
+<li>给弹窗绑定<code>onmousedown</code>事件，获取到鼠标在弹窗中的位置（以弹窗左上角为原点）。</li>
+<li><code>document</code>绑定<code>onmousemove</code>事件，获取当前的鼠标位置，当前鼠标位置减去鼠标在弹窗的相当位置即可得到此时弹窗应该处于的位置。然后在通过<code>style</code>设置弹窗的位置。</li>
+<li>鼠标松开解绑<code>document</code>的鼠标事件。</li>
+</ol>
+<blockquote>
+<p>注意点：</p>
+</blockquote>
 <ol>
-<li><code>normal</code>和<code>keep-all</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png" alt></li>
-<li><code>break-all</code>：队尾放不下一个单词的时候，先用单词前面的字母挤满这一行，多余的字母换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/breakall.pn" alt></li>
-<li><code>break-word</code>：队尾放不下一个单词的时候，可以在半角空格或连字符处换行，没有半角空格或连字符处和<code>break-all</code>的规则保持一致。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png" alt></li>
+<li>弹窗要一直在页面可视区移动，最大的移动距离就是可视区的宽高减去盒子本身的宽高(还要考虑到浏览器的滚动条的宽高，我的浏览器滚动条是自己设置的，高度为0，宽度为10)。<br><code>window.innerHeight - vnode.offsetHeight / 2</code>;<br><code>(window.innerWidth - vnode.offsetWidth / 2) - 10</code>;</li>
+<li>只有弹窗标题才能拖拽，所以判断非标题部分之间<code>return</code>。</li>
+<li>浏览器窗口大小改变会影响弹窗的位置，监听改变浏览器窗口改变把弹窗居中。</li>
 </ol>
-<h4 id="word-wrap"><a href="#word-wrap" class="headerlink" title="word-wrap"></a><code>word-wrap</code></h4><ol>
-<li><code>word-wrap</code>: <code>normal</code>;</li>
-<li><code>word-wrap</code>: <code>break-word</code>;<div class="note info"><p>对于<code>non-CJK</code> (non-CJK 指非中文/日文/韩文) 文本。这里以英文举例</p></div></li>
-<li><code>normal</code>：队尾放不下一个单词的时候，只能在半角空格或连字符处换行。否则超出的部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/normal.png" alt></li>
-<li><code>break-word</code>：队尾放不下一个单词的时候，可以在半角空格或连字符处换行，没有半角空格或连字符处先用单词前面的字母挤满这一行，多余的字母换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/break-word.png" alt></li>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="单独引用"><a href="#单独引用" class="headerlink" title="单独引用"></a>单独引用</h4><ol>
+<li>下载<code>drag.vue</code>。<a href="https://github.com/tmgycsz/blog.demo/blob/master/vue.demo/vue.drag/dragDiv.vue" target="_blank" rel="noopener">vueDrag.vue</a>。</li>
+<li><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/drag-single.png" alt></li>
+<li><p>控制弹窗的显示隐藏通过<code>v-if</code>绑定<code>data</code>里的数据即可。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition name=<span class="string">"el-fade-in"</span>&gt;</span><br><span class="line">    &lt;v-drag v-<span class="keyword">if</span>=<span class="string">"isShow"</span> :tilte=<span class="string">"title"</span> :type=<span class="string">"type"</span> @confirm=<span class="string">"confirmSubmit"</span> @cancel=<span class="string">"cancel"</span> :buttonstatus=<span class="string">"buttonstatus"</span>&gt;</span><br><span class="line">      &lt;el-form label-width=<span class="string">"100px"</span>&gt;</span><br><span class="line">        &lt;el-form-item label=<span class="string">"用户名称："</span>&gt;</span><br><span class="line">          &lt;el-input placeholder=<span class="string">"请输入用户名"</span> v-model=<span class="string">"username"</span>&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">        &lt;el-form-item label="密码："&gt;</span><br><span class="line">          &lt;el-input placeholder="请输入密码" v-model="password"&gt;&lt;/el-input&gt;</span><br><span class="line">        &lt;/el-form-item&gt;</span><br><span class="line">      &lt;/el-form&gt;</span><br><span class="line">    &lt;/v-drag&gt;</span><br><span class="line"> &lt;/transition&gt;</span><br></pre></td></tr></table></figure>
+ <div class="note info"><p>相关的属性和emit方法需要自己定义</p></div>
+</li>
 </ol>
-<div class="note info"><p>对于<code>CJK</code> (<code>CJK</code> 指中文/日文/韩文) 。这里以中文举例</p></div>
-<p>以上的6个css属性除了<code>word-break</code>: <code>keep-all</code>其它5个属性效果一致。</p>
-<ol>
-<li><code>word-break</code>: <code>keep-all</code>：只能在半角空格或连字符处换行，没有半角空格或连字符处超出部分溢出显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/ckeep-all.png" alt></li>
-<li>其它5个属性：文字超出部分换行显示。<br> <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/cnormal.png" alt></li>
+<h4 id="v-cli全局引入"><a href="#v-cli全局引入" class="headerlink" title="v-cli全局引入"></a>v-cli全局引入</h4><ol>
+<li><code>src</code>目录下新建<code>components</code>目录，下载<code>vueDrag.vue</code>到此目录下。</li>
+<li><p><code>components</code>目录下新建<code>index.js</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import VueDrag form ./vueDrag.vue</span><br><span class="line"></span><br><span class="line">export default function install(Vue) &#123;</span><br><span class="line">	Vue.component(&quot;app-drag&quot;, VueDrag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>main.js</code>中加入代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import appComponents from &quot;./components/index.js&quot;;</span><br><span class="line">Vue.use(appComponents);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>页面中使用<code>&lt;app-drag&gt;&lt;/app-drag&gt;</code></p>
+</li>
 </ol>
-<h3 id="实现文字超过省略号"><a href="#实现文字超过省略号" class="headerlink" title="实现文字超过省略号"></a>实现文字超过省略号</h3><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>这个方法可以用来实现禁止剪切和复制网页内容…</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>关于这个组件我觉得还有很多优化的地方，望各位大佬给出意见。</p>
 
       
     </div>
@@ -616,7 +657,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/" title="文字，英文溢出的处理方法">https://tmgycsz.github.io/2019/03/29/表格英文单词截断处理/</a>
+    <a href="https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/" title="编写可拖拽的弹窗">https://tmgycsz.github.io/2019/03/04/vue编写可拖拽的弹窗/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -631,7 +672,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/日常bug/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>日常bug</a>
+            <a href="/tags/vue组件/" rel="tag" style="border:none"><i class="fa fa-tag tags" style="margin-right:5px"></i>vue组件</a>
           
         </div>
       
@@ -659,8 +700,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/11/String笔记/" rel="next" title="String笔记">
-                <i class="fa fa-chevron-left"></i> String笔记
+              <a href="/2019/02/27/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -669,8 +710,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/18/vue实现国际化/" rel="prev" title="vue实现国际化">
-                vue实现国际化 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/04/自定义IconFont图标/" rel="prev" title="自定义IconFont图标">
+                自定义IconFont图标 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -845,7 +886,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#相关属性"><span class="nav-number">1.1.</span> <span class="nav-text">相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#word-break"><span class="nav-number">1.1.1.</span> <span class="nav-text">word-break</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#word-wrap"><span class="nav-number">1.1.2.</span> <span class="nav-text">word-wrap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现文字超过省略号"><span class="nav-number">1.2.</span> <span class="nav-text">实现文字超过省略号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">2.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#可拖拽的弹窗"><span class="nav-number">1.</span> <span class="nav-text">可拖拽的弹窗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现步骤"><span class="nav-number">3.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计盒子ui"><span class="nav-number">3.1.</span> <span class="nav-text">设计盒子ui</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义组件props"><span class="nav-number">3.2.</span> <span class="nav-text">定义组件props</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义事件实现按钮回调"><span class="nav-number">3.3.</span> <span class="nav-text">自定义事件实现按钮回调</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义指令drag实现拖拽效果"><span class="nav-number">3.4.</span> <span class="nav-text">自定义指令drag实现拖拽效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vue的directives。"><span class="nav-number">3.4.1.</span> <span class="nav-text">vue的directives。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关属性-事件对象event，dom元素，window对象-。"><span class="nav-number">3.4.2.</span> <span class="nav-text">相关属性(事件对象event，dom元素，window对象)。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#相关事件"><span class="nav-number">3.4.3.</span> <span class="nav-text">相关事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现代码"><span class="nav-number">3.4.4.</span> <span class="nav-text">实现代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码解析"><span class="nav-number">3.4.5.</span> <span class="nav-text">代码解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">3.5.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单独引用"><span class="nav-number">3.5.1.</span> <span class="nav-text">单独引用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#v-cli全局引入"><span class="nav-number">3.5.2.</span> <span class="nav-text">v-cli全局引入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
 
           </div>

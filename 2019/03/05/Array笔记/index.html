@@ -149,14 +149,13 @@
 <meta property="og:site_name" content="陈小黑的blog">
 <meta property="og:description" content="前言数组是我们平时编码中必不可少的一个重要，无论是数据的处理还是数据的传递，它都起到了至关重要的作用。无论是老版的JavaScript还是ES6都提供了大量的方法让我们来对数组进行处理。本文主要介绍Array对象的本质和它的相关属性，方法。 Array原型图原型链示意图">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.imgur.com/csxyIwi.png">
-<meta property="og:image" content="https://i.imgur.com/1aaKb3B.png">
-<meta property="og:image" content="https://i.imgur.com/tZsoOSL.png">
-<meta property="og:updated_time" content="2019-03-05T12:13:32.707Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.proto.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.function.png">
+<meta property="og:updated_time" content="2019-04-01T02:16:13.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Array笔记">
 <meta name="twitter:description" content="前言数组是我们平时编码中必不可少的一个重要，无论是数据的处理还是数据的传递，它都起到了至关重要的作用。无论是老版的JavaScript还是ES6都提供了大量的方法让我们来对数组进行处理。本文主要介绍Array对象的本质和它的相关属性，方法。 Array原型图原型链示意图">
-<meta name="twitter:image" content="https://i.imgur.com/csxyIwi.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.proto.png">
 
 
 
@@ -419,8 +418,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-03-05T20:13:32+08:00">
-                2019-03-05
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-01T10:16:13+08:00">
+                2019-04-01
               </time>
             
           </span>
@@ -529,13 +528,13 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>数组是我们平时编码中必不可少的一个重要，无论是数据的处理还是数据的传递，它都起到了至关重要的作用。无论是老版的JavaScript还是ES6都提供了大量的方法让我们来对数组进行处理。本文主要介绍Array对象的本质和它的相关属性，方法。</p>
 <h2 id="Array原型图"><a href="#Array原型图" class="headerlink" title="Array原型图"></a>Array原型图</h2><div class="note info"><p>原型链示意图</p></div>
-<p><img src="https://i.imgur.com/csxyIwi.png" alt><br><a id="more"></a><br><div class="note info"><p>分两个方向来分析</p></div></p>
+<p><img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.proto.png" alt><br><a id="more"></a><br><div class="note info"><p>分两个方向来分析</p></div></p>
 <h2 id="原生对象Array"><a href="#原生对象Array" class="headerlink" title="原生对象Array"></a>原生对象Array</h2><p>作为JavaScript的原生对象Array</p>
 <h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><ul>
-<li><p>按f12打开控制台输入<code>Array.</code>你会发现侧边出现了很长的一串的属性和方法的补全提示，这些属性和方法到底哪些是可用的又有哪些是<code>Array对象</code>本身的呢？我们可以试验一下。<br>  <img src="https://i.imgur.com/1aaKb3B.png" alt></p>
+<li><p>按f12打开控制台输入<code>Array.</code>你会发现侧边出现了很长的一串的属性和方法的补全提示，这些属性和方法到底哪些是可用的又有哪些是<code>Array对象</code>本身的呢？我们可以试验一下。</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.length);</span><br><span class="line">console.log(Array.name);</span><br><span class="line">console.log(Array.from);</span><br><span class="line">console.log(Array.isArray);</span><br><span class="line">console.log(Array.of);</span><br><span class="line">console.log(Array.apply);</span><br><span class="line">console.log(Array.bind);</span><br><span class="line">console.log(Array.constructor);</span><br><span class="line">console.log(Array.toString);</span><br><span class="line">console.log(Array.hasOwnProperty);</span><br><span class="line">console.log(Array.isPrototypeOf);</span><br><span class="line">console.log(Array.toLocaleString);</span><br><span class="line">console.log(Array.valueOf);</span><br><span class="line"></span><br><span class="line">console.log(Array.arguments);</span><br><span class="line">console.log(Array.call);</span><br><span class="line">console.log(Array.caller);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>打印结果<br>  <img src="https://i.imgur.com/tZsoOSL.png" alt></p>
+<li><p>打印结果<br>  <img src="https://raw.githubusercontent.com/tmgycsz/article-pictures/master/picture/array.function.png" alt></p>
 </li>
 <li><p>除了最后的3个属性报错其他的属性或方法全部被打印出来，但是这些不一定就是<code>Array</code>的本身的属性和方法。首先<code>Array</code>可以作为<code>函数实例对象</code>实际上可以看做是通过<code>new Function()</code>创建的，所以它继承了<code>Function原型对象</code>上的属性和方法，而<code>Function.prototype</code>作为对象是可以继承<code>Object原型对象</code>上的属性和方法。所以<code>Array</code>也继承了<code>Object</code>原型对象上的属性和方法。</p>
 </li>
@@ -1046,7 +1045,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -1068,7 +1067,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1200,7 +1199,7 @@ setInterval("createtime()",250);
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次
     </span><span class="post-meta-divider">|</span></font>
     <font color="DarkSlateGray" face="kaiti">
-    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">16.3k</span>字,</span>
+    <span title="总字数"><i class="fa fa-edit"></i> <span class="post-count">17.9k</span>字,</span>
     <span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span><span class="post-meta-divider">|</span>
     </font>
   
